@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社DE group |最先端AI生成コンテンツで革新する総合マーケティング支援</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #fff;
+      background: #1a1a1a;
+      overflow-x: hidden;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg, #2d3a2e 0%, #3d4a3e 30%, #4a5a4a 60%, #2d3a2e 100%);
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 30% 50%, rgba(120,130,80,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 40%, rgba(80,100,60,0.3) 0%, transparent 50%);
+    }
+    
+    .hero-title {
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      z-index: 1;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      margin-top: 2rem;
+      z-index: 1;
+      opacity: 0.9;
+    }
+    
+    .scroll-arrow {
+      position: absolute;
+      bottom: 3rem;
+      z-index: 1;
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      opacity: 0.7;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(10px); }
+      60% { transform: translateY(5px); }
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .section-text {
+      z-index: 1;
+    }
+    
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      opacity: 0.8;
+      letter-spacing: 0.1em;
+    }
+    
+    .section-body {
+      font-size: 0.95rem;
+      line-height: 2;
+      font-weight: 300;
+      opacity: 0.85;
+    }
+    
+    .section-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      z-index: 1;
+    }
+    
+    .section-images .img-placeholder {
+      aspect-ratio: 3/4;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .section-images .img-placeholder:first-child {
+      margin-top: 2rem;
+    }
+    
+    .img-placeholder {
+      background: linear-gradient(135deg, #666 0%, #444 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+    
+    /* Section backgrounds */
+    .section-about {
+      background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
+    }
+    
+    .section-future {
+      background: linear-gradient(180deg, #2a3a5a 0%, #1a2a4a 100%);
+    }
+    
+    .section-tech {
+      background: linear-gradient(180deg, #3a2a2a 0%, #2a1a1a 100%);
+    }
+    
+    .section-results {
+      background: linear-gradient(180deg, #1a2a3a 0%, #0a1a2a 100%);
+    }
+    
+    .section-company {
+      background: linear-gradient(180deg, #5a2a2a 0%, #3a1a1a 100%);
+    }
+    
+    /* Company Info */
+    .company-info {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    
+    .company-details {
+      z-index: 1;
+    }
+    
+    .company-row {
+      margin-bottom: 1.5rem;
+    }
+    
+    .company-label {
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.6;
+      margin-bottom: 0.3rem;
+    }
+    
+    .company-value {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+    
+    .business-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .business-list li {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #111;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-inner,
+      .company-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .section-images {
+        order: -1;
+      }
+      
+      .section {
+        padding: 4rem 1.5rem;
+      }
+    }
+
+    /* Decorative colored blocks for images */
+    .deco-1 { background: linear-gradient(135deg, #e8d5c4 0%, #c4a882 50%, #8b7355 100%); }
+    .deco-2 { background: linear-gradient(135deg, #a8e6cf 0%, #56ab91 50%, #2d6a4f 100%); }
+    .deco-3 { background: linear-gradient(135deg, #ffd93d 0%, #ff8c00 50%, #c44536 100%); }
+    .deco-4 { background: linear-gradient(135deg, #c77dff 0%, #7b2cbf 50%, #3c096c 100%); }
+    .deco-5 { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #b33939 100%); }
+    .deco-6 { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #0652DD 100%); }
+    .deco-7 { background: linear-gradient(135deg, #fd79a8 0%, #e84393 50%, #6c5ce7 100%); }
+    .deco-8 { background: linear-gradient(135deg, #55efc4 0%, #00b894 50%, #00cec9 100%); }
+    .deco-9 { background: linear-gradient(135deg, #fab1a0 0%, #e17055 50%, #d63031 100%); }
+    .deco-10 { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 50%, #636e72 100%); }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <h1 class="hero-title">DE group</h1>
+    <p class="hero-subtitle">Digital Edge Lab</p>
+    <div class="scroll-arrow">↓</div>
+  </section>
+
+  <!-- About -->
+  <section class="section section-about" id="about">
+    <div class="section-inner">
+      <div class="section-text">
+        <h2 class="section-title">ABOUT</h2>
+        <p class="section-subtitle">AI生成クリエイティブ × マーケティング支援</p>
+        <p class="section-body">
+          先進的な画像生成AI（例：Stable Diffusion）や動画生成AI（例：Kling）を活用し、Adobe製ソフトウェアによる編集技術と融合したクリエイティブ制作を中核事業として展開しております。具体的には、これらの技術を用いて生成された画像素材やショート動画などのコンテンツ、並びに知的財産（IP）の販売を主軸とし、これらを活用したSNSマーケティング支援サービスを提供しております。<br><br>
+          さらに、ランディングページ（LP）の制作やSNSマーケティング施策にとどまらず、各種ポータルサイトやその他媒体におけるユーザー特性を詳細に分析し、広告投資対効果（ROI）の最大化を目指すマーケティング戦略を展開しております。これにより、オンライン上のデジタル施策全体のコストパフォーマンス向上に貢献しています。
+        </p>
+      </div>
+      <div class="section-images">
+        <div class="img-placeholder deco-1"></div>
+        <div class="img-placeholder deco-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Plans -->
+  <section class="section section-future" id="future">
+    <div class="section-inner">
+      <div class="section-text">
+        <h2 class="section-title">今後の展開</h2>
+        <p class="section-body">
+          今後は、当社自らが小ロットのD2C（Direct-to-Consumer）事業に参入し、OEM方式で製品を調達。Shopifyを活用して自社ECサイトで直接エンドユーザーに販売するほか、Amazonなどの主要ECモールへの出品も実施します。これにより、EC物販サイトおよびECモールのコンテンツ制作やシステム運用に関するノウハウを蓄積し、その知見をクライアントへフィードバックすることで、さらなる事業価値の向上を図ります。<br><br>
+          また、オンライン事業に留まらず、小規模なカフェやバー等の実店舗展開にも着手。店舗経営におけるMEO対策、デジタルサイネージの導入、その他マーケティング施策を通じ、オフライン領域における集客効果の最大化とブランディング強化にも努めています。
+        </p>
+      </div>
+      <div class="section-images">
+        <div class="img-placeholder deco-3"></div>
+        <div class="img-placeholder deco-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Innovation -->
+  <section class="section section-tech" id="tech">
+    <div class="section-inner">
+      <div class="section-text">
+        <h2 class="section-title">技術革新と<br>業務効率向上</h2>
+        <p class="section-body">
+          従来、LPやデジタルサイネージのクリエイティブ制作を主力として参画しておりましたが、近年のGPU性能の飛躍的向上およびAI生成ツールの進化に伴い、最新の機材および技術を導入。これにより、制作コストおよび制作スピードを従来比で３分の１以下に短縮することに成功しております。今後、AI技術がさらに高度な知性を獲得することが予測される中、当社も継続的なアップデートを実施し、より高精度かつ迅速なサービス提供を実現してまいります。
+        </p>
+      </div>
+      <div class="section-images">
+        <div class="img-placeholder deco-5"></div>
+        <div class="img-placeholder deco-6"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section section-results" id="results">
+    <div class="section-inner">
+      <div class="section-text">
+        <h2 class="section-title">過去の実績</h2>
+        <p class="section-body">
+          オンライン事業においては、当社が立ち上げ初期から参画したオンラインショップチームが、ポータルサイトにおけるウィークリーランキング第１位を１カ月以内に獲得。これをLPに反映することでコンバージョン率（CVR）の向上と顧客獲得単価（CPO）の低減に寄与しました。また、AIを活用したSNS投稿用ショート動画の生成手法を確立し、投稿開始から１カ月以内にフォロワー数1万人を突破。定期購入を促進するための価格戦略および訴求手法を提案した結果、初回購入からリピーターへの転換率（F2転換率）が80％を超える成果を上げ、新規顧客獲得のみならず、顧客生涯価値（LTV）の向上にも成功しております。<br><br>
+          店舗型事業においては、立ち上げ段階から参画し、プロのカメラマンによる高解像度の写真や動画を素材として活用した独自性の高いホームページを制作。月額33,000円の媒体費用で平均客単価5,000円、月間約60組の来店を安定的に獲得しております。さらに、デジタルサイネージの効果測定に関しては、実施したアンケート調査の結果、新規来店客の約20％がデジタルサイネージによる認知を経て、Google Business Profileのレビューやホームページでの情報確認を行った上で来店したという統計データも確認されております。
+        </p>
+      </div>
+      <div class="section-images">
+        <div class="img-placeholder deco-7"></div>
+        <div class="img-placeholder deco-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Info -->
+  <section class="section section-company" id="company">
+    <div class="company-info">
+      <div class="company-grid">
+        <div class="company-details">
+          <h2 class="section-title">会社概要</h2>
+
+          <div class="company-row">
+            <div class="company-label">会社名</div>
+            <div class="company-value">株式会社DE group</div>
+          </div>
+
+          <div class="company-row">
+            <div class="company-label">代表取締役</div>
+            <div class="company-value">相澤　彰臣</div>
+          </div>
+
+          <div class="company-row">
+            <div class="company-label">設立</div>
+            <div class="company-value">令和7年1月8日</div>
+          </div>
+
+          <div class="company-row">
+            <div class="company-label">資本金</div>
+            <div class="company-value">1,000,000円</div>
+          </div>
+
+          <div class="company-row">
+            <div class="company-label">所在地</div>
+            <div class="company-value">宮城県仙台市青葉区立町1-12-203</div>
+          </div>
+
+          <div class="company-row">
+            <div class="company-label">事業内容</div>
+            <div class="company-value">
+              <ol class="business-list" style="list-style: decimal; padding-left: 1.5rem;">
+                <li>インターネット・カタログ等通信販売</li>
+                <li>インターネットコンテンツサービスの提供</li>
+                <li>WEBサイトの企画立案、作成及び管理代行</li>
+                <li>WEBデザインほかインターネット関連のデザイン業務</li>
+                <li>マーケティング業務及び販売促進業務の支援及び代理業</li>
+                <li>生成AIの各種技術を応用したコンテンツの開発及び販売</li>
+                <li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li>
+                <li>知的財産権(著作権、特許権など)の売買及び売買代行</li>
+                <li>バー、クラブ等の飲食店の経営</li>
+                <li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li>
+                <li>古物商</li>
+                <li>前各号に関するコンサルティング事業</li>
+                <li>前各号に付帯関連する一切の事業</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="section-images" style="align-self: center;">
+          <div class="img-placeholder deco-9"></div>
+          <div class="img-placeholder deco-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 株式会社DE group. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
