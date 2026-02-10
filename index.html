@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社DE group | AI生成クリエイティブ × マーケティング支援</title>
-  <meta name="description" content="株式会社DE groupは、最先端AI生成コンテンツとマーケティング支援で、ビジネスの成長を加速させます。">
+  <title>株式会社DE group | シーシャ × AI × マーケティング</title>
+  <meta name="description" content="株式会社DE groupはシーシャバー運営、AI生成マーケティング、シーシャ関連EC販売、飲食コンサルティングを展開する総合企業です。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0a0a0a;
-      --accent: #4f46e5;
-      --accent-light: #818cf8;
-      --surface: #ffffff;
-      --surface-dim: #f8f9fa;
-      --text: #111827;
-      --text-secondary: #6b7280;
-      --border: #e5e7eb;
+      --primary: #0c0c0c;
+      --accent: #c8956c;
+      --accent-dark: #a87750;
+      --accent-light: #e8c4a8;
+      --surface: #0c0c0c;
+      --surface-light: #151515;
+      --surface-card: #1a1a1a;
+      --text: #f5f0eb;
+      --text-dim: rgba(245,240,235,0.55);
+      --border: rgba(255,255,255,0.08);
       --radius: 16px;
-      --radius-sm: 8px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,725 +33,344 @@
       line-height: 1.7;
     }
 
-    /* ===== Navigation ===== */
+    /* Nav */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1rem 2rem;
-      backdrop-filter: blur(20px);
-      background: rgba(255,255,255,0.85);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 2.5rem;
+      backdrop-filter: blur(24px);
+      background: rgba(12,12,12,0.8);
       border-bottom: 1px solid var(--border);
       transition: all 0.3s;
     }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--primary);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.3rem; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent) !important; color: var(--primary) !important; padding: 0.55rem 1.4rem; border-radius: 100px; font-weight: 700 !important; font-size: 0.8rem !important; transition: all 0.2s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(200,149,108,0.3); }
 
-    .nav-cta {
-      background: var(--primary);
-      color: #fff !important;
-      padding: 0.5rem 1.25rem;
-      border-radius: 100px;
-      font-size: 0.85rem !important;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      color: #fff !important;
-    }
-
-    /* ===== Hero ===== */
+    /* Hero */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 2rem 4rem;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, #f0f0ff 0%, #ffffff 60%);
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 10rem 2rem 6rem; position: relative; overflow: hidden;
     }
-
     .hero::before {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,149,108,0.08) 0%, transparent 60%);
     }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      background: rgba(79,70,229,0.08);
-      border: 1px solid rgba(79,70,229,0.15);
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--accent);
-      margin-bottom: 2rem;
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.3;
     }
-
-    .hero-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse-dot 2s infinite;
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.4rem 1.2rem; border: 1px solid rgba(200,149,108,0.25);
+      border-radius: 100px; font-size: 0.75rem; font-weight: 500;
+      color: var(--accent); letter-spacing: 0.1em; margin-bottom: 2.5rem;
     }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
+    .hero-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.03em; margin-bottom: 1.5rem;
+      background: linear-gradient(180deg, var(--text) 40%, var(--text-dim));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    .hero h1 .accent { color: var(--accent); }
-
     .hero-desc {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.8;
+      font-size: 1.05rem; color: var(--text-dim); max-width: 580px;
+      margin: 0 auto 3rem; line-height: 1.9;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn {
-      padding: 0.85rem 2rem;
-      border-radius: 100px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s;
-      border: none;
-      cursor: pointer;
+      padding: 0.9rem 2.2rem; border-radius: 100px; font-size: 0.9rem;
+      font-weight: 600; text-decoration: none; transition: all 0.25s;
+      border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;
     }
+    .btn-accent { background: var(--accent); color: var(--primary); box-shadow: 0 4px 20px rgba(200,149,108,0.25); }
+    .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,149,108,0.35); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+    /* Sections */
+    .section { padding: 7rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-tag { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1rem; display: block; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; }
+    .section-desc { font-size: 0.95rem; color: var(--text-dim); max-width: 600px; margin: 0 auto; }
+
+    /* Business Cards */
+    .biz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+    .biz-card {
+      padding: 2.5rem; border-radius: var(--radius); background: var(--surface-card);
+      border: 1px solid var(--border); transition: all 0.35s; position: relative; overflow: hidden;
     }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(79,70,229,0.4);
+    .biz-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent); opacity: 0; transition: opacity 0.35s;
     }
+    .biz-card:hover { border-color: rgba(200,149,108,0.2); transform: translateY(-4px); }
+    .biz-card:hover::before { opacity: 1; }
+    .biz-num { font-size: 0.7rem; font-weight: 700; color: var(--accent); letter-spacing: 0.15em; margin-bottom: 1.5rem; text-transform: uppercase; }
+    .biz-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .biz-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.8; }
+    .biz-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent); font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-top: 1.5rem; transition: gap 0.2s; }
+    .biz-link:hover { gap: 0.7rem; }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
+    /* Store Section */
+    .store-section { background: var(--surface-light); }
+    .store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .store-visual {
+      aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden;
+      background: linear-gradient(135deg, #2a1f15 0%, #1a1410 50%, #0f0a05 100%);
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); position: relative;
     }
+    .store-visual-text { font-size: 3rem; font-weight: 900; color: var(--accent); opacity: 0.15; letter-spacing: -0.02em; }
+    .store-info h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .store-info .store-sub { font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500; letter-spacing: 0.05em; }
+    .store-info p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.9; margin-bottom: 2rem; }
 
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    /* Consulting */
+    .consult-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      padding: 3rem; border-radius: var(--radius); background: var(--surface-card);
+      border: 1px solid var(--border); align-items: center;
     }
+    .consult-text h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .consult-text p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.8; }
+    .consult-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .metric { text-align: center; padding: 1.5rem; border-radius: 12px; background: rgba(200,149,108,0.06); border: 1px solid rgba(200,149,108,0.1); }
+    .metric-num { font-size: 2rem; font-weight: 900; color: var(--accent); letter-spacing: -0.02em; }
+    .metric-label { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; }
 
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
+    /* EC Shop */
+    .shop-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 3rem; }
+    .shop-item {
+      border-radius: 12px; overflow: hidden; background: var(--surface-card);
+      border: 1px solid var(--border); transition: all 0.3s;
     }
-
-    .stat-item { text-align: center; }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: -0.02em;
+    .shop-item:hover { border-color: rgba(200,149,108,0.25); transform: translateY(-3px); }
+    .shop-img {
+      aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; background: linear-gradient(135deg, #1f1a15, #151210);
     }
+    .shop-item-info { padding: 1rem; }
+    .shop-item-name { font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.4; }
+    .shop-item-cat { font-size: 0.7rem; color: var(--text-dim); }
 
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-top: 0.25rem;
-    }
+    /* Company */
+    .company-table { max-width: 800px; margin: 0 auto; }
+    .company-row { display: grid; grid-template-columns: 150px 1fr; border-bottom: 1px solid var(--border); padding: 1.2rem 0; gap: 2rem; }
+    .company-label { font-size: 0.8rem; font-weight: 600; color: var(--text-dim); }
+    .company-value { font-size: 0.9rem; }
+    .biz-list { list-style: none; padding: 0; counter-reset: item; }
+    .biz-list li { counter-increment: item; font-size: 0.85rem; line-height: 1.9; padding-left: 2rem; position: relative; }
+    .biz-list li::before { content: counter(item) '.'; position: absolute; left: 0; color: var(--accent); font-weight: 600; font-size: 0.75rem; }
 
-    /* ===== Sections ===== */
-    .section {
-      padding: 7rem 2rem;
-    }
-
-    .section-dark {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .section-dim {
-      background: var(--surface-dim);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .section-dark .section-tag { color: var(--accent-light); }
-
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .section-desc {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .section-dark .section-desc { color: rgba(255,255,255,0.6); }
-
-    /* ===== Service Cards ===== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      padding: 2.5rem 2rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: #fff;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-color: transparent;
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .icon-purple { background: rgba(79,70,229,0.1); color: var(--accent); }
-    .icon-blue { background: rgba(59,130,246,0.1); color: #3b82f6; }
-    .icon-green { background: rgba(16,185,129,0.1); color: #10b981; }
-    .icon-orange { background: rgba(245,158,11,0.1); color: #f59e0b; }
-    .icon-pink { background: rgba(236,72,153,0.1); color: #ec4899; }
-    .icon-cyan { background: rgba(6,182,212,0.1); color: #06b6d4; }
-
-    .service-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    /* ===== Strengths ===== */
-    .strengths-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .strength-card {
-      padding: 2.5rem;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
-      transition: all 0.3s;
-    }
-
-    .strength-card:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(129,140,248,0.3);
-      transform: translateY(-2px);
-    }
-
-    .strength-number {
-      font-size: 3rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--accent-light), #c084fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-    }
-
-    .strength-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .strength-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-    }
-
-    /* ===== Results ===== */
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .result-card {
-      padding: 2.5rem;
-      border-radius: var(--radius);
-      background: #fff;
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-    }
-
-    .result-card:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
-    }
-
-    .result-metric {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .result-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .result-card p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    /* ===== Company Info ===== */
-    .company-table {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .company-row {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 0;
-      gap: 2rem;
-    }
-
-    .company-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    .company-value {
-      font-size: 0.95rem;
-    }
-
-    .business-list {
-      list-style: none;
-      padding: 0;
-      counter-reset: item;
-    }
-
-    .business-list li {
-      counter-increment: item;
-      font-size: 0.9rem;
-      line-height: 1.9;
-      padding-left: 2rem;
-      position: relative;
-    }
-
-    .business-list li::before {
-      content: counter(item) '.';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-
-    /* ===== Contact CTA ===== */
+    /* CTA */
     .cta-section {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      color: #fff;
-      text-align: center;
-      padding: 6rem 2rem;
+      text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #1a1510, #0c0c0c);
     }
-
-    .cta-section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
+    .cta-section::before {
+      content: ''; position: absolute; top: 50%; left: 50%; width: 500px; height: 500px;
+      transform: translate(-50%,-50%); border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,149,108,0.1), transparent 70%);
     }
+    .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; position: relative; }
+    .cta-section p { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 2.5rem; position: relative; }
 
-    .cta-section p {
-      font-size: 1rem;
-      opacity: 0.85;
-      margin-bottom: 2rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 3rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-size: 1rem; font-weight: 700; }
+    .footer-logo span { color: var(--accent); }
+    footer small { font-size: 0.75rem; color: var(--text-dim); }
 
-    .btn-white {
-      background: #fff;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .btn-white:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background: var(--primary);
-      color: rgba(255,255,255,0.4);
-      padding: 3rem 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    footer small {
-      font-size: 0.8rem;
-    }
-
-    /* ===== Responsive ===== */
+    /* Responsive */
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-      .strengths-grid { grid-template-columns: 1fr; }
-      .results-grid { grid-template-columns: 1fr; }
-      .company-row { grid-template-columns: 1fr; gap: 0.25rem; }
+      .store-grid, .consult-card { grid-template-columns: 1fr; gap: 2rem; }
+      .shop-preview { grid-template-columns: repeat(2, 1fr); }
+      .biz-grid { grid-template-columns: 1fr; }
+      .consult-metrics { grid-template-columns: 1fr 1fr; }
+      .company-row { grid-template-columns: 1fr; gap: 0.3rem; }
       .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
     }
 
-    /* ===== Animations ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(25px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="nav-inner">
       <a href="#" class="logo">DE <span>group</span></a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#strengths">Strengths</a></li>
-        <li><a href="#results">Results</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#store">Store</a></li>
+        <li><a href="#shop">Shop</a></li>
         <li><a href="#company">Company</a></li>
-        <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="hero" id="top">
+  <section class="hero">
     <div class="container">
-      <div class="hero-badge">Digital Edge Lab</div>
-      <h1 class="fade-in">AIの力で、<br><span class="accent">マーケティング</span>を<br>次のステージへ。</h1>
-      <p class="hero-desc fade-in">最先端のAI生成技術とデータドリブンなマーケティング戦略で、<br>ビジネスの成長を加速させるパートナー。</p>
+      <div class="hero-label">Digital Edge Lab</div>
+      <h1 class="fade-in">煙と灯りとテクノロジーで、<br>新しい体験をつくる。</h1>
+      <p class="hero-desc fade-in">シーシャバー運営・AI生成マーケティング・EC販売。<br>仙台を拠点に、リアルとデジタルを横断する事業を展開しています。</p>
       <div class="hero-actions fade-in">
-        <a href="#contact" class="btn btn-primary">お問い合わせ →</a>
-        <a href="#services" class="btn btn-outline">サービスを見る</a>
+        <a href="#business" class="btn btn-accent">事業を見る \u2192</a>
+        <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
       </div>
-      <div class="hero-stats fade-in">
-        <div class="stat-item">
-          <div class="stat-number">1位</div>
-          <div class="stat-label">ウィークリーランキング</div>
+    </div>
+  </section>
+
+  <!-- Business -->
+  <section class="section" id="business">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Business</span>
+        <h2 class="section-title">4つの事業領域</h2>
+        <p class="section-desc">シーシャカルチャーを起点に、AI・マーケティング・ECを横断する事業を展開しています。</p>
+      </div>
+      <div class="biz-grid">
+        <div class="biz-card fade-in">
+          <div class="biz-num">01 \u2014 Shisha Bar</div>
+          <h3>シーシャバー運営</h3>
+          <p>仙台・国分町で「Candle Chill」を運営。キャンドルが灯る癒しの空間で、厳選したフレーバーとドリンクをご提供しています。今後、店舗数の拡大を計画しています。</p>
+          <a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill \u2192</a>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">1万+</div>
-          <div class="stat-label">SNSフォロワー獲得</div>
+        <div class="biz-card fade-in">
+          <div class="biz-num">02 \u2014 AI Marketing</div>
+          <h3>AI生成マーケティング支援</h3>
+          <p>Stable DiffusionやKlingなどの最先端AI技術を活用し、画像・動画コンテンツの制作からSNS運用、LP制作、広告戦略まで、ROI最大化を目指すマーケティングを支援します。</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">80%+</div>
-          <div class="stat-label">F2転換率</div>
+        <div class="biz-card fade-in">
+          <div class="biz-num">03 \u2014 EC / Online Shop</div>
+          <h3>シーシャ関連EC販売</h3>
+          <p>フレーバー、ボウル、フーカー本体など、厳選したシーシャ関連商品をオンラインで販売。店舗運営の知見を活かし、初心者からプロまで満足いただける品揃えを展開します。</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">1/3</div>
-          <div class="stat-label">制作コスト削減</div>
+        <div class="biz-card fade-in">
+          <div class="biz-num">04 \u2014 Consulting</div>
+          <h3>飲食店コンサルティング</h3>
+          <p>MEO対策、デジタルサイネージ、HP制作、SNS運用まで、飲食店の集客を包括的にサポート。データに基づいた戦略で、安定的な来店数の獲得を実現します。</p>
+          <a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">支援実績: 鶏 炭火 地酒 松もと \u2192</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section section-dim" id="about">
+  <!-- Store -->
+  <section class="section store-section" id="store">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">About Us</span>
-        <h2 class="section-title">AI生成クリエイティブ ×<br>マーケティング支援</h2>
-        <p class="section-desc">先進的なAI技術とプロフェッショナルなマーケティング知見を融合し、オンラインからオフラインまで、ビジネス成長を包括的にサポートします。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Services</span>
-        <h2 class="section-title">提供サービス</h2>
-        <p class="section-desc">AIテクノロジーを駆使した幅広いサービスで、お客様のビジネスを支援します。</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <div class="service-icon icon-purple">🎨</div>
-          <h3>AI生成コンテンツ制作</h3>
-          <p>Stable DiffusionやKlingなどの最先端AI技術とAdobe製ソフトウェアを融合し、高品質な画像・動画コンテンツを制作します。</p>
+      <div class="store-grid fade-in">
+        <div class="store-visual">
+          <div class="store-visual-text">Candle<br>Chill</div>
         </div>
-        <div class="service-card fade-in">
-          <div class="service-icon icon-blue">📱</div>
-          <h3>SNSマーケティング支援</h3>
-          <p>AIを活用したショート動画生成やSNS運用戦略で、フォロワー獲得からコンバージョンまでをトータルサポートします。</p>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-icon icon-green">📊</div>
-          <h3>データドリブン広告運用</h3>
-          <p>各種ポータルサイトやSNS媒体のユーザー特性を分析し、ROIの最大化を目指す広告戦略を展開します。</p>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-icon icon-orange">🛒</div>
-          <h3>EC・D2C事業支援</h3>
-          <p>ShopifyやAmazonなどのECプラットフォームでの出品・運用・コンテンツ制作をワンストップで支援します。</p>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-icon icon-pink">🖥️</div>
-          <h3>LP・Webサイト制作</h3>
-          <p>コンバージョン最適化を意識したランディングページやコーポレートサイトの企画・制作を行います。</p>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-icon icon-cyan">🏪</div>
-          <h3>店舗マーケティング</h3>
-          <p>MEO対策、デジタルサイネージ、Google Business Profileの最適化など、実店舗の集客を強化します。</p>
+        <div class="store-info">
+          <span class="section-tag">Flagship Store</span>
+          <h3>Candle Chill</h3>
+          <div class="store-sub">Shisha Cafe & Bar \u2014 仙台・国分町</div>
+          <p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。今後、仙台を中心に店舗数を拡大していきます。</p>
+          <a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ \u2192</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Strengths -->
-  <section class="section section-dark" id="strengths">
+  <!-- EC Shop -->
+  <section class="section" id="shop">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag">Strengths</span>
-        <h2 class="section-title">DE groupの強み</h2>
-        <p class="section-desc">最新技術と実践的なノウハウで、圧倒的な成果を実現します。</p>
+        <span class="section-tag">Online Shop</span>
+        <h2 class="section-title">シーシャ関連商品の販売</h2>
+        <p class="section-desc">フレーバー、ボウル、フーカー本体まで。<br>厳選したシーシャアイテムをオンラインでお届けします。</p>
       </div>
-      <div class="strengths-grid">
-        <div class="strength-card fade-in">
-          <div class="strength-number">01</div>
-          <h3>AI×クリエイティブの融合</h3>
-          <p>最新のAI生成技術とプロの編集スキルを組み合わせ、従来の制作コストを3分の1以下に削減しながら高品質なコンテンツを実現します。</p>
+      <div class="shop-preview fade-in">
+        <div class="shop-item">
+          <div class="shop-img">\ud83c\udf4a</div>
+          <div class="shop-item-info">
+            <div class="shop-item-name">フレーバー各種</div>
+            <div class="shop-item-cat">Starline / DOZAJ / Bang Bang</div>
+          </div>
         </div>
-        <div class="strength-card fade-in">
-          <div class="strength-number">02</div>
-          <h3>データに基づく戦略</h3>
-          <p>感覚ではなくデータに基づいたマーケティング戦略を展開。CVR向上、CPO低減、LTV最大化を実現する科学的アプローチを採用しています。</p>
+        <div class="shop-item">
+          <div class="shop-img">\ud83c\udffa</div>
+          <div class="shop-item-info">
+            <div class="shop-item-name">ボウル / ヒートマネジメント</div>
+            <div class="shop-item-cat">Cosmo Bowl / Kaloud</div>
+          </div>
         </div>
-        <div class="strength-card fade-in">
-          <div class="strength-number">03</div>
-          <h3>オン・オフ統合支援</h3>
-          <p>オンラインのデジタルマーケティングだけでなく、実店舗のMEO対策やデジタルサイネージまで、統合的なマーケティング支援を提供します。</p>
+        <div class="shop-item">
+          <div class="shop-img">\ud83d\udca8</div>
+          <div class="shop-item-info">
+            <div class="shop-item-name">フーカー本体</div>
+            <div class="shop-item-cat">Ocean Hookah / WD Hookah</div>
+          </div>
         </div>
+        <div class="shop-item">
+          <div class="shop-img">\ud83d\udd27</div>
+          <div class="shop-item-info">
+            <div class="shop-item-name">アクセサリー / パーツ</div>
+            <div class="shop-item-cat">ホース / チャコール / トング</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 3rem;" class="fade-in">
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p>
       </div>
     </div>
   </section>
 
   <!-- Results -->
-  <section class="section" id="results">
+  <section class="section store-section" id="results">
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-tag">Results</span>
         <h2 class="section-title">実績</h2>
-        <p class="section-desc">当社の支援によって実現したクライアントの成果をご紹介します。</p>
       </div>
-      <div class="results-grid">
-        <div class="result-card fade-in">
-          <div class="result-metric">1位</div>
-          <h3>ECウィークリーランキング</h3>
-          <p>立ち上げ初期から参画したオンラインショップが、ポータルサイトのウィークリーランキング第1位を1カ月以内に獲得しました。</p>
+      <div class="consult-card fade-in">
+        <div class="consult-text">
+          <h3>データドリブンな成果</h3>
+          <p>オンライン事業においてはECランキング1位獲得、SNSフォロワー1万人突破、F2転換率80%超を実現。店舗型事業では月額33,000円の投資で月間60組の安定来店を獲得しています。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p>
         </div>
-        <div class="result-card fade-in">
-          <div class="result-metric">1万人</div>
-          <h3>SNSフォロワー獲得</h3>
-          <p>AIを活用したSNS投稿用ショート動画の生成手法を確立し、投稿開始から1カ月以内にフォロワー数1万人を突破しました。</p>
-        </div>
-        <div class="result-card fade-in">
-          <div class="result-metric">80%超</div>
-          <h3>F2転換率</h3>
-          <p>価格戦略と訴求手法の提案により、初回購入からリピーターへの転換率が80%を超え、LTVの大幅向上に成功しました。</p>
-        </div>
-        <div class="result-card fade-in">
-          <div class="result-metric">60組/月</div>
-          <h3>店舗集客</h3>
-          <p>月額33,000円の媒体費用で平均客単価5,000円、月間約60組の来店を安定的に獲得しています。</p>
+        <div class="consult-metrics">
+          <div class="metric"><div class="metric-num">1位</div><div class="metric-label">ECランキング獲得</div></div>
+          <div class="metric"><div class="metric-num">1万+</div><div class="metric-label">SNSフォロワー</div></div>
+          <div class="metric"><div class="metric-num">80%+</div><div class="metric-label">F2転換率</div></div>
+          <div class="metric"><div class="metric-num">60組</div><div class="metric-label">月間来店数</div></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Company -->
-  <section class="section section-dim" id="company">
+  <section class="section" id="company">
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-tag">Company</span>
         <h2 class="section-title">会社概要</h2>
       </div>
       <div class="company-table fade-in">
-        <div class="company-row">
-          <div class="company-label">会社名</div>
-          <div class="company-value">株式会社DE group</div>
-        </div>
-        <div class="company-row">
-          <div class="company-label">代表取締役</div>
-          <div class="company-value">相澤　彰臣</div>
-        </div>
-        <div class="company-row">
-          <div class="company-label">設立</div>
-          <div class="company-value">令和7年1月8日</div>
-        </div>
-        <div class="company-row">
-          <div class="company-label">資本金</div>
-          <div class="company-value">1,000,000円</div>
-        </div>
-        <div class="company-row">
-          <div class="company-label">所在地</div>
-          <div class="company-value">宮城県仙台市青葉区立町1-12-203</div>
-        </div>
+        <div class="company-row"><div class="company-label">会社名</div><div class="company-value">株式会社DE group</div></div>
+        <div class="company-row"><div class="company-label">代表取締役</div><div class="company-value">相澤\u3000彰臣</div></div>
+        <div class="company-row"><div class="company-label">設立</div><div class="company-value">令和7年1月8日</div></div>
+        <div class="company-row"><div class="company-label">資本金</div><div class="company-value">1,000,000円</div></div>
+        <div class="company-row"><div class="company-label">所在地</div><div class="company-value">宮城県仙台市青葉区立町1-12-203</div></div>
         <div class="company-row">
           <div class="company-label">事業内容</div>
           <div class="company-value">
-            <ol class="business-list">
+            <ol class="biz-list">
               <li>インターネット・カタログ等通信販売</li>
               <li>インターネットコンテンツサービスの提供</li>
               <li>WEBサイトの企画立案、作成及び管理代行</li>
@@ -774,42 +394,27 @@
   <!-- CTA -->
   <section class="cta-section" id="contact">
     <div class="container fade-in">
-      <h2>プロジェクトを始めましょう</h2>
-      <p>AIマーケティングの力で、ビジネスの新しい可能性を一緒に探りませんか？</p>
-      <a href="mailto:info@degrp.info" class="btn btn-white">お問い合わせ →</a>
+      <h2>お気軽にご相談ください</h2>
+      <p>シーシャバーの開業支援、マーケティング、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
+      <a href="mailto:info@degrp.info" class="btn btn-accent">お問い合わせ \u2192</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-logo">DE group</div>
-      <small>&copy; 2025 株式会社DE group. All rights reserved.</small>
+      <div class="footer-logo">DE <span>group</span></div>
+      <small>\u00a9 2025 株式会社DE group. All rights reserved.</small>
     </div>
   </footer>
 
   <script>
-    // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Nav scroll effect
     window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
-      } else {
-        nav.style.boxShadow = 'none';
-      }
+      document.querySelector('nav').style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
     });
   </script>
-
 </body>
 </html>
