@@ -3,398 +3,813 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社DE group |最先端AI生成コンテンツで革新する総合マーケティング支援</title>
+  <title>株式会社DE group | AI生成クリエイティブ × マーケティング支援</title>
+  <meta name="description" content="株式会社DE groupは、最先端AI生成コンテンツとマーケティング支援で、ビジネスの成長を加速させます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --primary: #0a0a0a;
+      --accent: #4f46e5;
+      --accent-light: #818cf8;
+      --surface: #ffffff;
+      --surface-dim: #f8f9fa;
+      --text: #111827;
+      --text-secondary: #6b7280;
+      --border: #e5e7eb;
+      --radius: 16px;
+      --radius-sm: 8px;
     }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Noto Sans JP', sans-serif;
-      color: #fff;
-      background: #1a1a1a;
-      overflow-x: hidden;
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--surface);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
     }
-    
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      background: linear-gradient(135deg, #2d3a2e 0%, #3d4a3e 30%, #4a5a4a 60%, #2d3a2e 100%);
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(ellipse at 30% 50%, rgba(120,130,80,0.4) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 40%, rgba(80,100,60,0.3) 0%, transparent 50%);
+      z-index: 100;
+      padding: 1rem 2rem;
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
     }
-    
-    .hero-title {
-      font-size: clamp(4rem, 12vw, 10rem);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      z-index: 1;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.3);
-    }
-    
-    .hero-subtitle {
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      margin-top: 2rem;
-      z-index: 1;
-      opacity: 0.9;
-    }
-    
-    .scroll-arrow {
-      position: absolute;
-      bottom: 3rem;
-      z-index: 1;
-      font-size: 1.5rem;
-      animation: bounce 2s infinite;
-      opacity: 0.7;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(10px); }
-      60% { transform: translateY(5px); }
-    }
-    
-    /* Section Styles */
-    .section {
-      padding: 6rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .section-inner {
+
+    .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
     }
-    
-    .section-text {
-      z-index: 1;
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
     }
-    
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
+
+    .logo span {
+      color: var(--accent);
     }
-    
-    .section-subtitle {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      opacity: 0.8;
-      letter-spacing: 0.1em;
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
     }
-    
-    .section-body {
-      font-size: 0.95rem;
-      line-height: 2;
-      font-weight: 300;
-      opacity: 0.85;
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    
-    .section-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      z-index: 1;
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.85rem !important;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    
-    .section-images .img-placeholder {
-      aspect-ratio: 3/4;
-      border-radius: 8px;
-      overflow: hidden;
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      color: #fff !important;
     }
-    
-    .section-images .img-placeholder:first-child {
-      margin-top: 2rem;
-    }
-    
-    .img-placeholder {
-      background: linear-gradient(135deg, #666 0%, #444 100%);
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f0f0ff 0%, #ffffff 60%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(79,70,229,0.08);
+      border: 1px solid rgba(79,70,229,0.15);
+      border-radius: 100px;
       font-size: 0.8rem;
-      opacity: 0.7;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 2rem;
     }
-    
-    /* Section backgrounds */
-    .section-about {
-      background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse-dot 2s infinite;
     }
-    
-    .section-future {
-      background: linear-gradient(180deg, #2a3a5a 0%, #1a2a4a 100%);
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
-    
-    .section-tech {
-      background: linear-gradient(180deg, #3a2a2a 0%, #2a1a1a 100%);
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    
-    .section-results {
-      background: linear-gradient(180deg, #1a2a3a 0%, #0a1a2a 100%);
+
+    .hero h1 .accent { color: var(--accent); }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
     }
-    
-    .section-company {
-      background: linear-gradient(180deg, #5a2a2a 0%, #3a1a1a 100%);
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    
-    /* Company Info */
-    .company-info {
+
+    .btn {
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(79,70,229,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* ===== Sections ===== */
+    .section {
+      padding: 7rem 2rem;
+    }
+
+    .section-dark {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .section-dim {
+      background: var(--surface-dim);
+    }
+
+    .container {
       max-width: 1200px;
       margin: 0 auto;
     }
-    
-    .company-grid {
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-dark .section-tag { color: var(--accent-light); }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-dark .section-desc { color: rgba(255,255,255,0.6); }
+
+    /* ===== Service Cards ===== */
+    .services-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-    
-    .company-details {
-      z-index: 1;
+
+    .service-card {
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #fff;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-    
-    .company-row {
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: transparent;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
       margin-bottom: 1.5rem;
     }
-    
+
+    .icon-purple { background: rgba(79,70,229,0.1); color: var(--accent); }
+    .icon-blue { background: rgba(59,130,246,0.1); color: #3b82f6; }
+    .icon-green { background: rgba(16,185,129,0.1); color: #10b981; }
+    .icon-orange { background: rgba(245,158,11,0.1); color: #f59e0b; }
+    .icon-pink { background: rgba(236,72,153,0.1); color: #ec4899; }
+    .icon-cyan { background: rgba(6,182,212,0.1); color: #06b6d4; }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== Strengths ===== */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .strength-card {
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .strength-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(129,140,248,0.3);
+      transform: translateY(-2px);
+    }
+
+    .strength-number {
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent-light), #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .strength-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .strength-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ===== Results ===== */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .result-card {
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .result-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .result-metric {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .result-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .result-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== Company Info ===== */
+    .company-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .company-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+      gap: 2rem;
+    }
+
     .company-label {
       font-size: 0.85rem;
-      font-weight: 400;
-      opacity: 0.6;
-      margin-bottom: 0.3rem;
+      font-weight: 600;
+      color: var(--text-secondary);
     }
-    
+
     .company-value {
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.8;
+      font-size: 0.95rem;
     }
-    
+
     .business-list {
       list-style: none;
       padding: 0;
-    }
-    
-    .business-list li {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: #111;
-      font-size: 0.8rem;
-      opacity: 0.5;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .section-inner,
-      .company-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      
-      .section-images {
-        order: -1;
-      }
-      
-      .section {
-        padding: 4rem 1.5rem;
-      }
+      counter-reset: item;
     }
 
-    /* Decorative colored blocks for images */
-    .deco-1 { background: linear-gradient(135deg, #e8d5c4 0%, #c4a882 50%, #8b7355 100%); }
-    .deco-2 { background: linear-gradient(135deg, #a8e6cf 0%, #56ab91 50%, #2d6a4f 100%); }
-    .deco-3 { background: linear-gradient(135deg, #ffd93d 0%, #ff8c00 50%, #c44536 100%); }
-    .deco-4 { background: linear-gradient(135deg, #c77dff 0%, #7b2cbf 50%, #3c096c 100%); }
-    .deco-5 { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #b33939 100%); }
-    .deco-6 { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #0652DD 100%); }
-    .deco-7 { background: linear-gradient(135deg, #fd79a8 0%, #e84393 50%, #6c5ce7 100%); }
-    .deco-8 { background: linear-gradient(135deg, #55efc4 0%, #00b894 50%, #00cec9 100%); }
-    .deco-9 { background: linear-gradient(135deg, #fab1a0 0%, #e17055 50%, #d63031 100%); }
-    .deco-10 { background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 50%, #636e72 100%); }
+    .business-list li {
+      counter-increment: item;
+      font-size: 0.9rem;
+      line-height: 1.9;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    .business-list li::before {
+      content: counter(item) '.';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    /* ===== Contact CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: #fff;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.4);
+      padding: 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    footer small {
+      font-size: 0.8rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .strengths-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .company-row { grid-template-columns: 1fr; gap: 0.25rem; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+
+    /* ===== Animations ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">DE <span>group</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#strengths">Strengths</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <section class="hero" id="top">
-    <h1 class="hero-title">DE group</h1>
-    <p class="hero-subtitle">Digital Edge Lab</p>
-    <div class="scroll-arrow">↓</div>
+    <div class="container">
+      <div class="hero-badge">Digital Edge Lab</div>
+      <h1 class="fade-in">AIの力で、<br><span class="accent">マーケティング</span>を<br>次のステージへ。</h1>
+      <p class="hero-desc fade-in">最先端のAI生成技術とデータドリブンなマーケティング戦略で、<br>ビジネスの成長を加速させるパートナー。</p>
+      <div class="hero-actions fade-in">
+        <a href="#contact" class="btn btn-primary">お問い合わせ →</a>
+        <a href="#services" class="btn btn-outline">サービスを見る</a>
+      </div>
+      <div class="hero-stats fade-in">
+        <div class="stat-item">
+          <div class="stat-number">1位</div>
+          <div class="stat-label">ウィークリーランキング</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1万+</div>
+          <div class="stat-label">SNSフォロワー獲得</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">80%+</div>
+          <div class="stat-label">F2転換率</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1/3</div>
+          <div class="stat-label">制作コスト削減</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- About -->
-  <section class="section section-about" id="about">
-    <div class="section-inner">
-      <div class="section-text">
-        <h2 class="section-title">ABOUT</h2>
-        <p class="section-subtitle">AI生成クリエイティブ × マーケティング支援</p>
-        <p class="section-body">
-          先進的な画像生成AI（例：Stable Diffusion）や動画生成AI（例：Kling）を活用し、Adobe製ソフトウェアによる編集技術と融合したクリエイティブ制作を中核事業として展開しております。具体的には、これらの技術を用いて生成された画像素材やショート動画などのコンテンツ、並びに知的財産（IP）の販売を主軸とし、これらを活用したSNSマーケティング支援サービスを提供しております。<br><br>
-          さらに、ランディングページ（LP）の制作やSNSマーケティング施策にとどまらず、各種ポータルサイトやその他媒体におけるユーザー特性を詳細に分析し、広告投資対効果（ROI）の最大化を目指すマーケティング戦略を展開しております。これにより、オンライン上のデジタル施策全体のコストパフォーマンス向上に貢献しています。
-        </p>
-      </div>
-      <div class="section-images">
-        <div class="img-placeholder deco-1"></div>
-        <div class="img-placeholder deco-2"></div>
+  <section class="section section-dim" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">About Us</span>
+        <h2 class="section-title">AI生成クリエイティブ ×<br>マーケティング支援</h2>
+        <p class="section-desc">先進的なAI技術とプロフェッショナルなマーケティング知見を融合し、オンラインからオフラインまで、ビジネス成長を包括的にサポートします。</p>
       </div>
     </div>
   </section>
 
-  <!-- Future Plans -->
-  <section class="section section-future" id="future">
-    <div class="section-inner">
-      <div class="section-text">
-        <h2 class="section-title">今後の展開</h2>
-        <p class="section-body">
-          今後は、当社自らが小ロットのD2C（Direct-to-Consumer）事業に参入し、OEM方式で製品を調達。Shopifyを活用して自社ECサイトで直接エンドユーザーに販売するほか、Amazonなどの主要ECモールへの出品も実施します。これにより、EC物販サイトおよびECモールのコンテンツ制作やシステム運用に関するノウハウを蓄積し、その知見をクライアントへフィードバックすることで、さらなる事業価値の向上を図ります。<br><br>
-          また、オンライン事業に留まらず、小規模なカフェやバー等の実店舗展開にも着手。店舗経営におけるMEO対策、デジタルサイネージの導入、その他マーケティング施策を通じ、オフライン領域における集客効果の最大化とブランディング強化にも努めています。
-        </p>
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Services</span>
+        <h2 class="section-title">提供サービス</h2>
+        <p class="section-desc">AIテクノロジーを駆使した幅広いサービスで、お客様のビジネスを支援します。</p>
       </div>
-      <div class="section-images">
-        <div class="img-placeholder deco-3"></div>
-        <div class="img-placeholder deco-4"></div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon icon-purple">🎨</div>
+          <h3>AI生成コンテンツ制作</h3>
+          <p>Stable DiffusionやKlingなどの最先端AI技術とAdobe製ソフトウェアを融合し、高品質な画像・動画コンテンツを制作します。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon icon-blue">📱</div>
+          <h3>SNSマーケティング支援</h3>
+          <p>AIを活用したショート動画生成やSNS運用戦略で、フォロワー獲得からコンバージョンまでをトータルサポートします。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon icon-green">📊</div>
+          <h3>データドリブン広告運用</h3>
+          <p>各種ポータルサイトやSNS媒体のユーザー特性を分析し、ROIの最大化を目指す広告戦略を展開します。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon icon-orange">🛒</div>
+          <h3>EC・D2C事業支援</h3>
+          <p>ShopifyやAmazonなどのECプラットフォームでの出品・運用・コンテンツ制作をワンストップで支援します。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon icon-pink">🖥️</div>
+          <h3>LP・Webサイト制作</h3>
+          <p>コンバージョン最適化を意識したランディングページやコーポレートサイトの企画・制作を行います。</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon icon-cyan">🏪</div>
+          <h3>店舗マーケティング</h3>
+          <p>MEO対策、デジタルサイネージ、Google Business Profileの最適化など、実店舗の集客を強化します。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Tech Innovation -->
-  <section class="section section-tech" id="tech">
-    <div class="section-inner">
-      <div class="section-text">
-        <h2 class="section-title">技術革新と<br>業務効率向上</h2>
-        <p class="section-body">
-          従来、LPやデジタルサイネージのクリエイティブ制作を主力として参画しておりましたが、近年のGPU性能の飛躍的向上およびAI生成ツールの進化に伴い、最新の機材および技術を導入。これにより、制作コストおよび制作スピードを従来比で３分の１以下に短縮することに成功しております。今後、AI技術がさらに高度な知性を獲得することが予測される中、当社も継続的なアップデートを実施し、より高精度かつ迅速なサービス提供を実現してまいります。
-        </p>
+  <!-- Strengths -->
+  <section class="section section-dark" id="strengths">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Strengths</span>
+        <h2 class="section-title">DE groupの強み</h2>
+        <p class="section-desc">最新技術と実践的なノウハウで、圧倒的な成果を実現します。</p>
       </div>
-      <div class="section-images">
-        <div class="img-placeholder deco-5"></div>
-        <div class="img-placeholder deco-6"></div>
+      <div class="strengths-grid">
+        <div class="strength-card fade-in">
+          <div class="strength-number">01</div>
+          <h3>AI×クリエイティブの融合</h3>
+          <p>最新のAI生成技術とプロの編集スキルを組み合わせ、従来の制作コストを3分の1以下に削減しながら高品質なコンテンツを実現します。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <div class="strength-number">02</div>
+          <h3>データに基づく戦略</h3>
+          <p>感覚ではなくデータに基づいたマーケティング戦略を展開。CVR向上、CPO低減、LTV最大化を実現する科学的アプローチを採用しています。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <div class="strength-number">03</div>
+          <h3>オン・オフ統合支援</h3>
+          <p>オンラインのデジタルマーケティングだけでなく、実店舗のMEO対策やデジタルサイネージまで、統合的なマーケティング支援を提供します。</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Results -->
-  <section class="section section-results" id="results">
-    <div class="section-inner">
-      <div class="section-text">
-        <h2 class="section-title">過去の実績</h2>
-        <p class="section-body">
-          オンライン事業においては、当社が立ち上げ初期から参画したオンラインショップチームが、ポータルサイトにおけるウィークリーランキング第１位を１カ月以内に獲得。これをLPに反映することでコンバージョン率（CVR）の向上と顧客獲得単価（CPO）の低減に寄与しました。また、AIを活用したSNS投稿用ショート動画の生成手法を確立し、投稿開始から１カ月以内にフォロワー数1万人を突破。定期購入を促進するための価格戦略および訴求手法を提案した結果、初回購入からリピーターへの転換率（F2転換率）が80％を超える成果を上げ、新規顧客獲得のみならず、顧客生涯価値（LTV）の向上にも成功しております。<br><br>
-          店舗型事業においては、立ち上げ段階から参画し、プロのカメラマンによる高解像度の写真や動画を素材として活用した独自性の高いホームページを制作。月額33,000円の媒体費用で平均客単価5,000円、月間約60組の来店を安定的に獲得しております。さらに、デジタルサイネージの効果測定に関しては、実施したアンケート調査の結果、新規来店客の約20％がデジタルサイネージによる認知を経て、Google Business Profileのレビューやホームページでの情報確認を行った上で来店したという統計データも確認されております。
-        </p>
+  <section class="section" id="results">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Results</span>
+        <h2 class="section-title">実績</h2>
+        <p class="section-desc">当社の支援によって実現したクライアントの成果をご紹介します。</p>
       </div>
-      <div class="section-images">
-        <div class="img-placeholder deco-7"></div>
-        <div class="img-placeholder deco-8"></div>
+      <div class="results-grid">
+        <div class="result-card fade-in">
+          <div class="result-metric">1位</div>
+          <h3>ECウィークリーランキング</h3>
+          <p>立ち上げ初期から参画したオンラインショップが、ポータルサイトのウィークリーランキング第1位を1カ月以内に獲得しました。</p>
+        </div>
+        <div class="result-card fade-in">
+          <div class="result-metric">1万人</div>
+          <h3>SNSフォロワー獲得</h3>
+          <p>AIを活用したSNS投稿用ショート動画の生成手法を確立し、投稿開始から1カ月以内にフォロワー数1万人を突破しました。</p>
+        </div>
+        <div class="result-card fade-in">
+          <div class="result-metric">80%超</div>
+          <h3>F2転換率</h3>
+          <p>価格戦略と訴求手法の提案により、初回購入からリピーターへの転換率が80%を超え、LTVの大幅向上に成功しました。</p>
+        </div>
+        <div class="result-card fade-in">
+          <div class="result-metric">60組/月</div>
+          <h3>店舗集客</h3>
+          <p>月額33,000円の媒体費用で平均客単価5,000円、月間約60組の来店を安定的に獲得しています。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Company Info -->
-  <section class="section section-company" id="company">
-    <div class="company-info">
-      <div class="company-grid">
-        <div class="company-details">
-          <h2 class="section-title">会社概要</h2>
-
-          <div class="company-row">
-            <div class="company-label">会社名</div>
-            <div class="company-value">株式会社DE group</div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">代表取締役</div>
-            <div class="company-value">相澤　彰臣</div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">設立</div>
-            <div class="company-value">令和7年1月8日</div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">資本金</div>
-            <div class="company-value">1,000,000円</div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">所在地</div>
-            <div class="company-value">宮城県仙台市青葉区立町1-12-203</div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">事業内容</div>
-            <div class="company-value">
-              <ol class="business-list" style="list-style: decimal; padding-left: 1.5rem;">
-                <li>インターネット・カタログ等通信販売</li>
-                <li>インターネットコンテンツサービスの提供</li>
-                <li>WEBサイトの企画立案、作成及び管理代行</li>
-                <li>WEBデザインほかインターネット関連のデザイン業務</li>
-                <li>マーケティング業務及び販売促進業務の支援及び代理業</li>
-                <li>生成AIの各種技術を応用したコンテンツの開発及び販売</li>
-                <li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li>
-                <li>知的財産権(著作権、特許権など)の売買及び売買代行</li>
-                <li>バー、クラブ等の飲食店の経営</li>
-                <li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li>
-                <li>古物商</li>
-                <li>前各号に関するコンサルティング事業</li>
-                <li>前各号に付帯関連する一切の事業</li>
-              </ol>
-            </div>
-          </div>
+  <!-- Company -->
+  <section class="section section-dim" id="company">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Company</span>
+        <h2 class="section-title">会社概要</h2>
+      </div>
+      <div class="company-table fade-in">
+        <div class="company-row">
+          <div class="company-label">会社名</div>
+          <div class="company-value">株式会社DE group</div>
         </div>
-        <div class="section-images" style="align-self: center;">
-          <div class="img-placeholder deco-9"></div>
-          <div class="img-placeholder deco-10"></div>
+        <div class="company-row">
+          <div class="company-label">代表取締役</div>
+          <div class="company-value">相澤　彰臣</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">設立</div>
+          <div class="company-value">令和7年1月8日</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">資本金</div>
+          <div class="company-value">1,000,000円</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">所在地</div>
+          <div class="company-value">宮城県仙台市青葉区立町1-12-203</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">事業内容</div>
+          <div class="company-value">
+            <ol class="business-list">
+              <li>インターネット・カタログ等通信販売</li>
+              <li>インターネットコンテンツサービスの提供</li>
+              <li>WEBサイトの企画立案、作成及び管理代行</li>
+              <li>WEBデザインほかインターネット関連のデザイン業務</li>
+              <li>マーケティング業務及び販売促進業務の支援及び代理業</li>
+              <li>生成AIの各種技術を応用したコンテンツの開発及び販売</li>
+              <li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li>
+              <li>知的財産権(著作権、特許権など)の売買及び売買代行</li>
+              <li>バー、クラブ等の飲食店の経営</li>
+              <li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li>
+              <li>古物商</li>
+              <li>前各号に関するコンサルティング事業</li>
+              <li>前各号に付帯関連する一切の事業</li>
+            </ol>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container fade-in">
+      <h2>プロジェクトを始めましょう</h2>
+      <p>AIマーケティングの力で、ビジネスの新しい可能性を一緒に探りませんか？</p>
+      <a href="mailto:info@degrp.info" class="btn btn-white">お問い合わせ →</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 株式会社DE group. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-logo">DE group</div>
+      <small>&copy; 2025 株式会社DE group. All rights reserved.</small>
+    </div>
   </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    });
+  </script>
 
 </body>
 </html>
