@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>株式会社DE group | シーシャ × AI × マーケティング</title>
-  <meta name="description" content="株式会社DE groupはシーシャバー運営、AI生成マーケティング、シーシャ関連EC販売、飲食コンサルティングを展開する総合企業です。">
+  <meta name="description" content="株式会社DE groupはシーシャバー運営・都内展開、AI生成マーケティング、シーシャ関連EC販売、飲食コンサルティングを展開。ヒトサラ全国1位の実績を持つ総合企業です。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
@@ -24,7 +24,7 @@
     .hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
     .hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text)}
-    .hero-desc{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin:0 auto 3rem;line-height:1.9}
+    .hero-desc{font-size:1.05rem;color:var(--text-dim);max-width:620px;margin:0 auto 3rem;line-height:1.9}
     .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
     .btn{padding:.9rem 2.2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem}
     .btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(176,124,79,.2)}.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(176,124,79,.3)}
@@ -34,7 +34,7 @@
     .section-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1rem;display:block}
     .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;color:var(--text)}
     .section-desc{font-size:.95rem;color:var(--text-dim);max-width:600px;margin:0 auto}
-    .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:1.5rem}
+    .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
     .biz-card{padding:2.5rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
     .biz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .35s}
     .biz-card:hover{border-color:rgba(176,124,79,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}.biz-card:hover::before{opacity:1}
@@ -42,14 +42,22 @@
     .biz-card h3{font-size:1.25rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
     .biz-card p{font-size:.88rem;color:var(--text-dim);line-height:1.8}
     .biz-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;text-decoration:none;margin-top:1.5rem;transition:gap .2s}.biz-link:hover{gap:.7rem}
+    .biz-badge{display:inline-block;padding:.2rem .7rem;border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:.05em;margin-top:.75rem}
+    .badge-gold{background:rgba(176,124,79,.1);color:var(--accent)}
+    .badge-blue{background:rgba(59,130,246,.1);color:#3b82f6}
+    .badge-green{background:rgba(34,197,94,.1);color:#16a34a}
     .store-section{background:var(--surface-light)}
     .store-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .store-visual{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#f5ebe0,#e8d5c4 50%,#d4bfa9);display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
-    .store-visual-text{font-size:3rem;font-weight:900;color:var(--accent);opacity:.25;letter-spacing:-0.02em;text-align:center}
+    .store-visual{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);position:relative}
+    .store-visual img{width:100%;height:100%;object-fit:cover}
     .store-info h3{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
     .store-info .store-sub{font-size:.85rem;color:var(--accent);margin-bottom:1.5rem;font-weight:500;letter-spacing:.05em}
     .store-info p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:2rem}
+    .store-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+    .store-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent);border:1px solid rgba(176,124,79,.15)}
     .consult-card{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .consult-visual{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+    .consult-visual img{width:100%;height:100%;object-fit:cover}
     .consult-text h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
     .consult-text p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
     .consult-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -61,6 +69,18 @@
     .shop-item:hover{border-color:rgba(176,124,79,.25);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
     .shop-img{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,#f8f2ec,#f0e6db)}
     .shop-item-info{padding:1rem}.shop-item-name{font-size:.82rem;font-weight:600;margin-bottom:.3rem;line-height:1.4;color:var(--text)}.shop-item-cat{font-size:.7rem;color:var(--text-dim)}
+    .fc-section{background:var(--surface-light)}
+    .fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .fc-content h3{font-size:1.8rem;font-weight:800;margin-bottom:1rem;color:var(--text)}
+    .fc-content p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:1.5rem}
+    .fc-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+    .fc-feature{padding:1.2rem;border-radius:12px;background:var(--surface-card);border:1px solid var(--border)}
+    .fc-feature-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+    .fc-feature-desc{font-size:.75rem;color:var(--text-dim)}
+    .fc-visual{padding:3rem;border-radius:var(--radius);background:linear-gradient(135deg,#f5ebe0,#e8d5c4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1.5rem;min-height:400px}
+    .fc-icon{font-size:4rem}
+    .fc-visual h4{font-size:1.3rem;font-weight:800;color:var(--accent-dark)}
+    .fc-visual p{font-size:.85rem;color:var(--text-dim)}
     .company-table{max-width:800px;margin:0 auto}
     .company-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--border);padding:1.2rem 0;gap:2rem}
     .company-label{font-size:.8rem;font-weight:600;color:var(--text-dim)}.company-value{font-size:.9rem;color:var(--text)}
@@ -75,18 +95,26 @@
     .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
     .footer-logo{font-size:1rem;font-weight:700;color:var(--text)}.footer-logo span{color:var(--accent)}
     footer small{font-size:.75rem;color:var(--text-dim)}
-    @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-inner{flex-direction:column;gap:1rem;text-align:center}}
+    .case-card{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-top:2rem}
+    .case-visual{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+    .case-visual img{width:100%;height:100%;object-fit:cover}
+    .case-text h4{font-size:1.2rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
+    .case-text .case-sub{font-size:.8rem;color:var(--accent);margin-bottom:1rem;font-weight:500}
+    .case-text p{font-size:.88rem;color:var(--text-dim);line-height:1.8;margin-bottom:1rem}
+    .case-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+    .case-tag{padding:.2rem .6rem;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent)}
+    @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-inner{flex-direction:column;gap:1rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr 1fr}}
     .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body>
 
-<nav><div class="nav-inner"><a href="#" class="logo">DE <span>group</span></a><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
+<nav><div class="nav-inner"><a href="#" class="logo">DE <span>group</span></a><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#results">Results</a></li><li><a href="#fc">FC</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
 
 <section class="hero"><div class="container">
   <div class="hero-label">Digital Edge Lab</div>
-  <h1 class="fade-in">煙と灯りとテクノロジーで、<br>新しい体験をつくる。</h1>
-  <p class="hero-desc fade-in">シーシャバー運営—AI生成マーケティング—EC販売。<br>仙台を拠点に、リアルとデジタルを横断する事業を展開しています。</p>
+  <h1 class="fade-in">煙と灯りとAIで、<br>飲食の未来をつくる。</h1>
+  <p class="hero-desc fade-in">シーシャバーの都内展開、AIマーケティング、EC販売、飲食コンサル。<br>仙台から東京へ——リアル店舗とデジタルを横断し、飲食業界に新しい価値を届けます。</p>
   <div class="hero-actions fade-in">
     <a href="#business" class="btn btn-accent">事業を見る →</a>
     <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
@@ -94,37 +122,66 @@
 </div></section>
 
 <section class="section" id="business"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Business</span><h2 class="section-title">4つの事業領域</h2><p class="section-desc">シーシャカルチャーを起点に、AI・マーケティング・ECを横断する事業を展開しています。</p></div>
+  <div class="section-header fade-in"><span class="section-tag">Business</span><h2 class="section-title">5つの事業領域</h2><p class="section-desc">シーシャカルチャーを起点に、AI・マーケティング・EC・フランチャイズを横断する事業を展開しています。</p></div>
   <div class="biz-grid">
-    <div class="biz-card fade-in"><div class="biz-num">01 — Shisha Bar</div><h3>シーシャバー運営</h3><p>仙台・国分町で「Candle Chill」を運営。キャンドルが灯る癒しの空間で、厳選したフレーバーとドリンクをご提供しています。今後、店舗数の拡大を計画しています。</p><a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill →</a></div>
-    <div class="biz-card fade-in"><div class="biz-num">02 — AI Marketing</div><h3>AI生成マーケティング支援</h3><p>Stable DiffusionやKlingなどの最先端AI技術を活用し、画像・動画コンテンツの制作からSNS運用、LP制作、広告戦略まで、ROI最大化を目指すマーケティングを支援します。</p></div>
-    <div class="biz-card fade-in"><div class="biz-num">03 — EC / Online Shop</div><h3>シーシャ関連EC販売</h3><p>フレーバー、ボウル、フーカー本体など、厳選したシーシャ関連商品をオンラインで販売。店舗運営の知見を活かし、初心者からプロまで満足いただける品揃えを展開します。</p></div>
-    <div class="biz-card fade-in"><div class="biz-num">04 — Consulting</div><h3>飲食店コンサルティング</h3><p>MEO対策、デジタルサイネージ、HP制作、SNS運用まで、飲食店の集客を包括的にサポート。データに基づいた戦略で、安定的な来店数の獲得を実現します。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">支援実績: 鶏 炭火 地酒 松もと →</a></div>
+    <div class="biz-card fade-in"><div class="biz-num">01 — Shisha Bar</div><h3>シーシャバー運営・都内展開</h3><p>仙台・国分町で「Candle Chill」を運営し、Instagramフォロワー1万人を達成。今後、都内への多店舗展開を計画中。キャンドルが灯る癒しの空間で、本格シーシャ体験を提供します。</p><span class="biz-badge badge-gold">Instagram 1万フォロワー達成</span><br><a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill →</a></div>
+    <div class="biz-card fade-in"><div class="biz-num">02 — AI Marketing</div><h3>AI生成マーケティング支援</h3><p>Stable DiffusionやKlingなどの最先端AI技術を活用し、画像・動画コンテンツの制作からSNS運用、LP制作、広告戦略まで、ROI最大化を目指すマーケティングを支援します。</p><span class="biz-badge badge-blue">AI分析・集客・業務効率化</span></div>
+    <div class="biz-card fade-in"><div class="biz-num">03 — Consulting</div><h3>飲食店トータル運営代行</h3><p>集客、SNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行。支援先「鶏 炭火 地酒 松もと」をヒトサラ全国ランキング1位に導いた実績があります。</p><span class="biz-badge badge-gold">ヒトサラ全国1位の実績</span><br><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">鶏 炭火 地酒 松もと →</a></div>
+    <div class="biz-card fade-in"><div class="biz-num">04 — Franchise</div><h3>FC加盟店の募集・支援</h3><p>シーシャ店のフランチャイズ展開を推進。AIによる分析・集客・業務効率化のノウハウをFC加盟店へ提供し、オーナーの成功を全面的にバックアップします。</p><span class="biz-badge badge-green">FC加盟店募集予定</span></div>
+    <div class="biz-card fade-in"><div class="biz-num">05 — EC / Online Shop</div><h3>シーシャ関連EC販売</h3><p>海外から仕入れたフレーバー、ボウル、フーカー本体など厳選したシーシャ関連商品をオンラインで販売。中古備品の買取・販売などリユース事業も展開し、サステナブルなシーシャ文化を推進します。</p><span class="biz-badge badge-green">ネットショップ準備中</span></div>
   </div>
 </div></section>
 
 <section class="section store-section" id="store"><div class="container"><div class="store-grid fade-in">
-  <div class="store-visual"><div class="store-visual-text">Candle<br>Chill</div></div>
-  <div class="store-info"><span class="section-tag">Flagship Store</span><h3>Candle Chill</h3><div class="store-sub">Shisha Cafe &amp; Bar — 仙台・国分町</div><p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。今後、仙台を中心に店舗数を拡大していきます。</p><a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ →</a></div>
+  <div class="store-visual"><img src="https://static.wixstatic.com/media/71bc15_c0d207a696cc42a08476e227e254955e~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/08.jpg" alt="Candle Chill 店内" loading="lazy"></div>
+  <div class="store-info"><span class="section-tag">Flagship Store</span><h3>Candle Chill</h3><div class="store-sub">Shisha Cafe &amp; Bar — 仙台・国分町 → 都内展開予定</div>
+  <div class="store-badges"><span class="store-badge">🕯️ キャンドル空間</span><span class="store-badge">📱 Instagram 1万フォロワー</span><span class="store-badge">🗼 都内展開予定</span></div>
+  <p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。仙台での成功モデルをもとに、今後は東京都内への展開を計画しています。</p><a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ →</a></div>
 </div></div></section>
 
-<section class="section" id="shop"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Online Shop</span><h2 class="section-title">シーシャ関連商品の販売</h2><p class="section-desc">フレーバー、ボウル、フーカー本体まで。<br>厳選したシーシャアイテムをオンラインでお届けします。</p></div>
-  <div class="shop-preview fade-in">
-    <div class="shop-item"><div class="shop-img">🍊</div><div class="shop-item-info"><div class="shop-item-name">フレーバー各種</div><div class="shop-item-cat">Starline / DOZAJ / Bang Bang</div></div></div>
-    <div class="shop-item"><div class="shop-img">🏺</div><div class="shop-item-info"><div class="shop-item-name">ボウル / ヒートマネジメント</div><div class="shop-item-cat">Cosmo Bowl / Kaloud</div></div></div>
-    <div class="shop-item"><div class="shop-img">💨</div><div class="shop-item-info"><div class="shop-item-name">フーカー本体</div><div class="shop-item-cat">Ocean Hookah / WD Hookah</div></div></div>
-    <div class="shop-item"><div class="shop-img">🔧</div><div class="shop-item-info"><div class="shop-item-name">アクセサリー / パーツ</div><div class="shop-item-cat">ホース / チャコール / トング</div></div></div>
+<section class="section" id="results"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Results</span><h2 class="section-title">実績・支援事例</h2><p class="section-desc">データドリブンなアプローチで、圧倒的な成果を実現しています。</p></div>
+  <div class="consult-card fade-in">
+    <div class="consult-text"><h3>数字が証明する実力</h3><p>オンライン事業においてはECランキング1位獲得、SNSフォロワー1万人突破、F2転換率80%超を実現。店舗型事業では月額33,000円の投資で月間60組の安定来店を獲得。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p></div>
+    <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ヒトサラ全国ランキング</div></div><div class="metric"><div class="metric-num">1万+</div><div class="metric-label">Instagramフォロワー</div></div><div class="metric"><div class="metric-num">80%+</div><div class="metric-label">F2転換率</div></div><div class="metric"><div class="metric-num">60組</div><div class="metric-label">月間安定来店数</div></div></div>
   </div>
-  <div style="text-align:center;margin-top:3rem" class="fade-in"><p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p></div>
+  <div class="case-card fade-in">
+    <div class="case-visual"><img src="https://tori-matumoto.com/wp-content/uploads/2023/06/662000.jpg" alt="鶏 炭火 地酒 松もと" loading="lazy"></div>
+    <div class="case-text"><span class="section-tag">Case Study</span><h4>鶏 炭火 地酒 松もと</h4><div class="case-sub">仙台・焼き鳥店 — ヒトサラ全国1位達成</div>
+    <div class="case-tags"><span class="case-tag">集客支援</span><span class="case-tag">SNSマーケティング</span><span class="case-tag">デジタルサイネージ</span><span class="case-tag">HP制作・運用</span><span class="case-tag">トータル運営代行</span></div>
+    <p>集客からSNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行を担当。データに基づいた戦略により、ヒトサラ全国ランキング1位を獲得しました。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">店舗サイトを見る →</a></div>
+  </div>
 </div></section>
 
-<section class="section store-section" id="results"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Results</span><h2 class="section-title">実績</h2></div>
-  <div class="consult-card fade-in">
-    <div class="consult-text"><h3>データドリブンな成果</h3><p>オンライン事業においてはECランキング1位獲得、SNSフォロワー1万人突破、F2転換率80%超を実現。店舗型事業では月額33,000円の投資で月間60組の安定来店を獲得しています。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p></div>
-    <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ECランキング獲得</div></div><div class="metric"><div class="metric-num">1万+</div><div class="metric-label">SNSフォロワー</div></div><div class="metric"><div class="metric-num">80%+</div><div class="metric-label">F2転換率</div></div><div class="metric"><div class="metric-num">60組</div><div class="metric-label">月間来店数</div></div></div>
+<section class="section fc-section" id="fc"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Franchise</span><h2 class="section-title">FC加盟店の募集</h2><p class="section-desc">成功モデルとAI技術で、あなたのシーシャ店経営をサポートします。</p></div>
+  <div class="fc-grid fade-in">
+    <div class="fc-content"><h3>AIで加速する<br>シーシャビジネス</h3><p>Candle Chillで培った店舗運営ノウハウと、最先端のAI技術を組み合わせたフランチャイズパッケージ。集客からオペレーションまで、オーナーの成功を全面サポートします。</p>
+    <div class="fc-features">
+      <div class="fc-feature"><div class="fc-feature-title">🤖 AI分析</div><div class="fc-feature-desc">顧客データ分析による最適な経営判断</div></div>
+      <div class="fc-feature"><div class="fc-feature-title">📈 AI集客</div><div class="fc-feature-desc">AIによるSNS運用・広告最適化</div></div>
+      <div class="fc-feature"><div class="fc-feature-title">⚡ 業務効率化</div><div class="fc-feature-desc">AIツールによるオペレーション自動化</div></div>
+      <div class="fc-feature"><div class="fc-feature-title">🎓 開業支援</div><div class="fc-feature-desc">物件選定から内装・メニュー構築まで</div></div>
+    </div>
+    <a href="#contact" class="btn btn-accent">FC加盟について相談する →</a>
+    </div>
+    <div class="fc-visual">
+      <div class="fc-icon">🏪</div>
+      <h4>都内展開予定</h4>
+      <p>仙台の成功モデルを東京へ。<br>FC加盟店も順次募集開始予定です。</p>
+    </div>
   </div>
+</div></section>
+
+<section class="section" id="shop"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Online Shop</span><h2 class="section-title">シーシャ関連商品の販売</h2><p class="section-desc">海外直輸入のフレーバー、備品からリユース品まで。<br>シーシャに必要なすべてをオンラインでお届けします。</p></div>
+  <div class="shop-preview fade-in">
+    <div class="shop-item"><div class="shop-img">🍊</div><div class="shop-item-info"><div class="shop-item-name">フレーバー各種</div><div class="shop-item-cat">海外直輸入 / 厳選ブランド</div></div></div>
+    <div class="shop-item"><div class="shop-img">🏺</div><div class="shop-item-info"><div class="shop-item-name">ボウル / ヒートマネジメント</div><div class="shop-item-cat">Cosmo Bowl / Kaloud 他</div></div></div>
+    <div class="shop-item"><div class="shop-img">💨</div><div class="shop-item-info"><div class="shop-item-name">フーカー本体</div><div class="shop-item-cat">Ocean Hookah / WD Hookah 他</div></div></div>
+    <div class="shop-item"><div class="shop-img">♻️</div><div class="shop-item-info"><div class="shop-item-name">リユース / 中古買取</div><div class="shop-item-cat">中古備品の買取・販売</div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:3rem" class="fade-in"><p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p></div>
 </div></section>
 
 <section class="section" id="company"><div class="container">
@@ -141,11 +198,11 @@
 
 <section class="cta-section" id="contact"><div class="container fade-in">
   <h2>お気軽にご相談ください</h2>
-  <p>シーシャバーの開業支援、マーケティング、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
+  <p>シーシャバーの開業・FC加盟、マーケティング支援、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
   <a href="mailto:info@degrp.info" class="btn btn-accent">お問い合わせ →</a>
 </div></section>
 
-<footer><div class="footer-inner"><div class="footer-logo">DE <span>group</span></div><small>© 2025 株式会社DE group. All rights reserved.</small></div></footer>
+<footer><div class="footer-inner"><div class="footer-logo">DE <span>group</span></div><small>&copy; 2025 株式会社DE group. All rights reserved.</small></div></footer>
 
 <script>
 const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
