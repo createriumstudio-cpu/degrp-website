@@ -8,148 +8,149 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <style>
-    :root{--primary:#0c0c0c;--accent:#c8956c;--accent-dark:#a87750;--accent-light:#e8c4a8;--surface:#0c0c0c;--surface-light:#151515;--surface-card:#1a1a1a;--text:#f5f0eb;--text-dim:rgba(245,240,235,0.55);--border:rgba(255,255,255,0.08);--radius:16px}
+    :root{--primary:#ffffff;--accent:#b07c4f;--accent-dark:#8d6340;--accent-light:#d4a574;--surface:#ffffff;--surface-light:#f8f6f3;--surface-card:#ffffff;--text:#1a1a1a;--text-dim:rgba(26,26,26,0.55);--border:rgba(0,0,0,0.08);--radius:16px}
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:'Inter','Noto Sans JP',sans-serif;color:var(--text);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.7}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;backdrop-filter:blur(24px);background:rgba(12,12,12,0.8);border-bottom:1px solid var(--border);transition:all .3s}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;backdrop-filter:blur(24px);background:rgba(255,255,255,0.85);border-bottom:1px solid var(--border);transition:all .3s}
     .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
     .logo{font-size:1.3rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.02em}.logo span{color:var(--accent)}
     .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
     .nav-links a{text-decoration:none;color:var(--text-dim);font-size:.8rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:var(--accent)}
-    .nav-cta{background:var(--accent)!important;color:var(--primary)!important;padding:.55rem 1.4rem;border-radius:100px;font-weight:700!important;font-size:.8rem!important;transition:all .2s}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(200,149,108,.3)}
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:10rem 2rem 6rem;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(200,149,108,.08) 0%,transparent 60%)}
-    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
-    .hero-label{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1.2rem;border:1px solid rgba(200,149,108,.25);border-radius:100px;font-size:.75rem;font-weight:500;color:var(--accent);letter-spacing:.1em;margin-bottom:2.5rem}
+    .nav-cta{background:var(--accent)!important;color:#fff!important;padding:.55rem 1.4rem;border-radius:100px;font-weight:700!important;font-size:.8rem!important;transition:all .2s}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(176,124,79,.3)}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:10rem 2rem 6rem;position:relative;overflow:hidden;background:var(--surface-light)}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(176,124,79,.06) 0%,transparent 60%)}
+    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent-light),transparent);opacity:.3}
+    .hero-label{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1.2rem;border:1px solid rgba(176,124,79,.3);border-radius:100px;font-size:.75rem;font-weight:500;color:var(--accent);letter-spacing:.1em;margin-bottom:2.5rem}
     .hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-    .hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;background:linear-gradient(180deg,var(--text) 40%,var(--text-dim));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text)}
     .hero-desc{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin:0 auto 3rem;line-height:1.9}
     .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
     .btn{padding:.9rem 2.2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem}
-    .btn-accent{background:var(--accent);color:var(--primary);box-shadow:0 4px 20px rgba(200,149,108,.25)}.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,149,108,.35)}
+    .btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(176,124,79,.2)}.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(176,124,79,.3)}
     .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
     .section{padding:7rem 2rem}.container{max-width:1200px;margin:0 auto}
     .section-header{text-align:center;margin-bottom:4rem}
     .section-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1rem;display:block}
-    .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem}
+    .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;color:var(--text)}
     .section-desc{font-size:.95rem;color:var(--text-dim);max-width:600px;margin:0 auto}
     .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:1.5rem}
-    .biz-card{padding:2.5rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden}
+    .biz-card{padding:2.5rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
     .biz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .35s}
-    .biz-card:hover{border-color:rgba(200,149,108,.2);transform:translateY(-4px)}.biz-card:hover::before{opacity:1}
+    .biz-card:hover{border-color:rgba(176,124,79,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}.biz-card:hover::before{opacity:1}
     .biz-num{font-size:.7rem;font-weight:700;color:var(--accent);letter-spacing:.15em;margin-bottom:1.5rem;text-transform:uppercase}
-    .biz-card h3{font-size:1.25rem;font-weight:800;margin-bottom:.75rem}
+    .biz-card h3{font-size:1.25rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
     .biz-card p{font-size:.88rem;color:var(--text-dim);line-height:1.8}
     .biz-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;text-decoration:none;margin-top:1.5rem;transition:gap .2s}.biz-link:hover{gap:.7rem}
     .store-section{background:var(--surface-light)}
     .store-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .store-visual{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#2a1f15,#1a1410 50%,#0f0a05);display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
-    .store-visual-text{font-size:3rem;font-weight:900;color:var(--accent);opacity:.15;letter-spacing:-0.02em;text-align:center}
-    .store-info h3{font-size:1.8rem;font-weight:800;margin-bottom:.5rem}
+    .store-visual{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#f5ebe0,#e8d5c4 50%,#d4bfa9);display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
+    .store-visual-text{font-size:3rem;font-weight:900;color:var(--accent);opacity:.25;letter-spacing:-0.02em;text-align:center}
+    .store-info h3{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
     .store-info .store-sub{font-size:.85rem;color:var(--accent);margin-bottom:1.5rem;font-weight:500;letter-spacing:.05em}
     .store-info p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:2rem}
-    .consult-card{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center}
-    .consult-text h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem}
+    .consult-card{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .consult-text h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
     .consult-text p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
     .consult-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-    .metric{text-align:center;padding:1.5rem;border-radius:12px;background:rgba(200,149,108,.06);border:1px solid rgba(200,149,108,.1)}
+    .metric{text-align:center;padding:1.5rem;border-radius:12px;background:rgba(176,124,79,.06);border:1px solid rgba(176,124,79,.12)}
     .metric-num{font-size:2rem;font-weight:900;color:var(--accent);letter-spacing:-0.02em}
     .metric-label{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
     .shop-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
-    .shop-item{border-radius:12px;overflow:hidden;background:var(--surface-card);border:1px solid var(--border);transition:all .3s}
-    .shop-item:hover{border-color:rgba(200,149,108,.25);transform:translateY(-3px)}
-    .shop-img{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,#1f1a15,#151210)}
-    .shop-item-info{padding:1rem}.shop-item-name{font-size:.82rem;font-weight:600;margin-bottom:.3rem;line-height:1.4}.shop-item-cat{font-size:.7rem;color:var(--text-dim)}
+    .shop-item{border-radius:12px;overflow:hidden;background:var(--surface-card);border:1px solid var(--border);transition:all .3s;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .shop-item:hover{border-color:rgba(176,124,79,.25);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+    .shop-img{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,#f8f2ec,#f0e6db)}
+    .shop-item-info{padding:1rem}.shop-item-name{font-size:.82rem;font-weight:600;margin-bottom:.3rem;line-height:1.4;color:var(--text)}.shop-item-cat{font-size:.7rem;color:var(--text-dim)}
     .company-table{max-width:800px;margin:0 auto}
     .company-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--border);padding:1.2rem 0;gap:2rem}
-    .company-label{font-size:.8rem;font-weight:600;color:var(--text-dim)}.company-value{font-size:.9rem}
+    .company-label{font-size:.8rem;font-weight:600;color:var(--text-dim)}.company-value{font-size:.9rem;color:var(--text)}
     .biz-list{list-style:none;padding:0;counter-reset:item}
-    .biz-list li{counter-increment:item;font-size:.85rem;line-height:1.9;padding-left:2rem;position:relative}
+    .biz-list li{counter-increment:item;font-size:.85rem;line-height:1.9;padding-left:2rem;position:relative;color:var(--text)}
     .biz-list li::before{content:counter(item) '.';position:absolute;left:0;color:var(--accent);font-weight:600;font-size:.75rem}
-    .cta-section{text-align:center;padding:6rem 2rem;position:relative;overflow:hidden;background:linear-gradient(135deg,#1a1510,#0c0c0c)}
-    .cta-section::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(200,149,108,.1),transparent 70%)}
-    .cta-section h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1rem;position:relative}
+    .cta-section{text-align:center;padding:6rem 2rem;position:relative;overflow:hidden;background:var(--surface-light)}
+    .cta-section::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(176,124,79,.08),transparent 70%)}
+    .cta-section h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1rem;position:relative;color:var(--text)}
     .cta-section p{font-size:.95rem;color:var(--text-dim);margin-bottom:2.5rem;position:relative}
-    footer{border-top:1px solid var(--border);padding:3rem 2rem}
+    footer{border-top:1px solid var(--border);padding:3rem 2rem;background:var(--surface)}
     .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-    .footer-logo{font-size:1rem;font-weight:700}.footer-logo span{color:var(--accent)}
+    .footer-logo{font-size:1rem;font-weight:700;color:var(--text)}.footer-logo span{color:var(--accent)}
     footer small{font-size:.75rem;color:var(--text-dim)}
     @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-inner{flex-direction:column;gap:1rem;text-align:center}}
     .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body>
-  <nav><div class="nav-inner"><a href="#" class="logo">DE <span>group</span></a><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
 
-  <section class="hero"><div class="container">
-    <div class="hero-label">Digital Edge Lab</div>
-    <h1 class="fade-in">煙と灯りとテクノロジーで、<br>新しい体験をつくる。</h1>
-    <p class="hero-desc fade-in">シーシャバー運営—AI生成マーケティング—EC販売。<br>仙台を拠点に、リアルとデジタルを横断する事業を展開しています。</p>
-    <div class="hero-actions fade-in">
-      <a href="#business" class="btn btn-accent">事業を見る →</a>
-      <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
-    </div>
-  </div></section>
+<nav><div class="nav-inner"><a href="#" class="logo">DE <span>group</span></a><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
 
-  <section class="section" id="business"><div class="container">
-    <div class="section-header fade-in"><span class="section-tag">Business</span><h2 class="section-title">4つの事業領域</h2><p class="section-desc">シーシャカルチャーを起点に、AI・マーケティング・ECを横断する事業を展開しています。</p></div>
-    <div class="biz-grid">
-      <div class="biz-card fade-in"><div class="biz-num">01 — Shisha Bar</div><h3>シーシャバー運営</h3><p>仙台・国分町で「Candle Chill」を運営。キャンドルが灯る癒しの空間で、厳選したフレーバーとドリンクをご提供しています。今後、店舗数の拡大を計画しています。</p><a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill →</a></div>
-      <div class="biz-card fade-in"><div class="biz-num">02 — AI Marketing</div><h3>AI生成マーケティング支援</h3><p>Stable DiffusionやKlingなどの最先端AI技術を活用し、画像・動画コンテンツの制作からSNS運用、LP制作、広告戦略まで、ROI最大化を目指すマーケティングを支援します。</p></div>
-      <div class="biz-card fade-in"><div class="biz-num">03 — EC / Online Shop</div><h3>シーシャ関連EC販売</h3><p>フレーバー、ボウル、フーカー本体など、厳選したシーシャ関連商品をオンラインで販売。店舗運営の知見を活かし、初心者からプロまで満足いただける品揃えを展開します。</p></div>
-      <div class="biz-card fade-in"><div class="biz-num">04 — Consulting</div><h3>飲食店コンサルティング</h3><p>MEO対策、デジタルサイネージ、HP制作、SNS運用まで、飲食店の集客を包括的にサポート。データに基づいた戦略で、安定的な来店数の獲得を実現します。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">支援実績: 鶏 炭火 地酒 松もと →</a></div>
-    </div>
-  </div></section>
+<section class="hero"><div class="container">
+  <div class="hero-label">Digital Edge Lab</div>
+  <h1 class="fade-in">煙と灯りとテクノロジーで、<br>新しい体験をつくる。</h1>
+  <p class="hero-desc fade-in">シーシャバー運営—AI生成マーケティング—EC販売。<br>仙台を拠点に、リアルとデジタルを横断する事業を展開しています。</p>
+  <div class="hero-actions fade-in">
+    <a href="#business" class="btn btn-accent">事業を見る →</a>
+    <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
+  </div>
+</div></section>
 
-  <section class="section store-section" id="store"><div class="container"><div class="store-grid fade-in">
-    <div class="store-visual"><div class="store-visual-text">Candle<br>Chill</div></div>
-    <div class="store-info"><span class="section-tag">Flagship Store</span><h3>Candle Chill</h3><div class="store-sub">Shisha Cafe &amp; Bar — 仙台・国分町</div><p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。今後、仙台を中心に店舗数を拡大していきます。</p><a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ →</a></div>
-  </div></div></section>
+<section class="section" id="business"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Business</span><h2 class="section-title">4つの事業領域</h2><p class="section-desc">シーシャカルチャーを起点に、AI・マーケティング・ECを横断する事業を展開しています。</p></div>
+  <div class="biz-grid">
+    <div class="biz-card fade-in"><div class="biz-num">01 — Shisha Bar</div><h3>シーシャバー運営</h3><p>仙台・国分町で「Candle Chill」を運営。キャンドルが灯る癒しの空間で、厳選したフレーバーとドリンクをご提供しています。今後、店舗数の拡大を計画しています。</p><a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill →</a></div>
+    <div class="biz-card fade-in"><div class="biz-num">02 — AI Marketing</div><h3>AI生成マーケティング支援</h3><p>Stable DiffusionやKlingなどの最先端AI技術を活用し、画像・動画コンテンツの制作からSNS運用、LP制作、広告戦略まで、ROI最大化を目指すマーケティングを支援します。</p></div>
+    <div class="biz-card fade-in"><div class="biz-num">03 — EC / Online Shop</div><h3>シーシャ関連EC販売</h3><p>フレーバー、ボウル、フーカー本体など、厳選したシーシャ関連商品をオンラインで販売。店舗運営の知見を活かし、初心者からプロまで満足いただける品揃えを展開します。</p></div>
+    <div class="biz-card fade-in"><div class="biz-num">04 — Consulting</div><h3>飲食店コンサルティング</h3><p>MEO対策、デジタルサイネージ、HP制作、SNS運用まで、飲食店の集客を包括的にサポート。データに基づいた戦略で、安定的な来店数の獲得を実現します。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">支援実績: 鶏 炭火 地酒 松もと →</a></div>
+  </div>
+</div></section>
 
-  <section class="section" id="shop"><div class="container">
-    <div class="section-header fade-in"><span class="section-tag">Online Shop</span><h2 class="section-title">シーシャ関連商品の販売</h2><p class="section-desc">フレーバー、ボウル、フーカー本体まで。<br>厳選したシーシャアイテムをオンラインでお届けします。</p></div>
-    <div class="shop-preview fade-in">
-      <div class="shop-item"><div class="shop-img">🍊</div><div class="shop-item-info"><div class="shop-item-name">フレーバー各種</div><div class="shop-item-cat">Starline / DOZAJ / Bang Bang</div></div></div>
-      <div class="shop-item"><div class="shop-img">🏺</div><div class="shop-item-info"><div class="shop-item-name">ボウル / ヒートマネジメント</div><div class="shop-item-cat">Cosmo Bowl / Kaloud</div></div></div>
-      <div class="shop-item"><div class="shop-img">💨</div><div class="shop-item-info"><div class="shop-item-name">フーカー本体</div><div class="shop-item-cat">Ocean Hookah / WD Hookah</div></div></div>
-      <div class="shop-item"><div class="shop-img">🔧</div><div class="shop-item-info"><div class="shop-item-name">アクセサリー / パーツ</div><div class="shop-item-cat">ホース / チャコール / トング</div></div></div>
-    </div>
-    <div style="text-align:center;margin-top:3rem" class="fade-in"><p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p></div>
-  </div></section>
+<section class="section store-section" id="store"><div class="container"><div class="store-grid fade-in">
+  <div class="store-visual"><div class="store-visual-text">Candle<br>Chill</div></div>
+  <div class="store-info"><span class="section-tag">Flagship Store</span><h3>Candle Chill</h3><div class="store-sub">Shisha Cafe &amp; Bar — 仙台・国分町</div><p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。今後、仙台を中心に店舗数を拡大していきます。</p><a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ →</a></div>
+</div></div></section>
 
-  <section class="section store-section" id="results"><div class="container">
-    <div class="section-header fade-in"><span class="section-tag">Results</span><h2 class="section-title">実績</h2></div>
-    <div class="consult-card fade-in">
-      <div class="consult-text"><h3>データドリブンな成果</h3><p>オンライン事業においてはECランキング1位獲得、SNSフォロワー1万人突破、F2転換率80%超を実現。店舗型事業では月額33,000円の投資で月間60組の安定来店を獲得しています。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p></div>
-      <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ECランキング獲得</div></div><div class="metric"><div class="metric-num">1万+</div><div class="metric-label">SNSフォロワー</div></div><div class="metric"><div class="metric-num">80%+</div><div class="metric-label">F2転換率</div></div><div class="metric"><div class="metric-num">60組</div><div class="metric-label">月間来店数</div></div></div>
-    </div>
-  </div></section>
+<section class="section" id="shop"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Online Shop</span><h2 class="section-title">シーシャ関連商品の販売</h2><p class="section-desc">フレーバー、ボウル、フーカー本体まで。<br>厳選したシーシャアイテムをオンラインでお届けします。</p></div>
+  <div class="shop-preview fade-in">
+    <div class="shop-item"><div class="shop-img">🍊</div><div class="shop-item-info"><div class="shop-item-name">フレーバー各種</div><div class="shop-item-cat">Starline / DOZAJ / Bang Bang</div></div></div>
+    <div class="shop-item"><div class="shop-img">🏺</div><div class="shop-item-info"><div class="shop-item-name">ボウル / ヒートマネジメント</div><div class="shop-item-cat">Cosmo Bowl / Kaloud</div></div></div>
+    <div class="shop-item"><div class="shop-img">💨</div><div class="shop-item-info"><div class="shop-item-name">フーカー本体</div><div class="shop-item-cat">Ocean Hookah / WD Hookah</div></div></div>
+    <div class="shop-item"><div class="shop-img">🔧</div><div class="shop-item-info"><div class="shop-item-name">アクセサリー / パーツ</div><div class="shop-item-cat">ホース / チャコール / トング</div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:3rem" class="fade-in"><p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p></div>
+</div></section>
 
-  <section class="section" id="company"><div class="container">
-    <div class="section-header fade-in"><span class="section-tag">Company</span><h2 class="section-title">会社概要</h2></div>
-    <div class="company-table fade-in">
-      <div class="company-row"><div class="company-label">会社名</div><div class="company-value">株式会社DE group</div></div>
-      <div class="company-row"><div class="company-label">代表取締役</div><div class="company-value">相澤　彰臣</div></div>
-      <div class="company-row"><div class="company-label">設立</div><div class="company-value">令和7年1月8日</div></div>
-      <div class="company-row"><div class="company-label">資本金</div><div class="company-value">1,000,000円</div></div>
-      <div class="company-row"><div class="company-label">所在地</div><div class="company-value">宮城県仙台市青葉区立町1-12-203</div></div>
-      <div class="company-row"><div class="company-label">事業内容</div><div class="company-value"><ol class="biz-list"><li>インターネット・カタログ等通信販売</li><li>インターネットコンテンツサービスの提供</li><li>WEBサイトの企画立案、作成及び管理代行</li><li>WEBデザインほかインターネット関連のデザイン業務</li><li>マーケティング業務及び販売促進業務の支援及び代理業</li><li>生成AIの各種技術を応用したコンテンツの開発及び販売</li><li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li><li>知的財産権(著作権、特許権など)の売買及び売買代行</li><li>バー、クラブ等の飲食店の経営</li><li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li><li>古物商</li><li>前各号に関するコンサルティング事業</li><li>前各号に付帯関連する一切の事業</li></ol></div></div>
-    </div>
-  </div></section>
+<section class="section store-section" id="results"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Results</span><h2 class="section-title">実績</h2></div>
+  <div class="consult-card fade-in">
+    <div class="consult-text"><h3>データドリブンな成果</h3><p>オンライン事業においてはECランキング1位獲得、SNSフォロワー1万人突破、F2転換率80%超を実現。店舗型事業では月額33,000円の投資で月間60組の安定来店を獲得しています。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p></div>
+    <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ECランキング獲得</div></div><div class="metric"><div class="metric-num">1万+</div><div class="metric-label">SNSフォロワー</div></div><div class="metric"><div class="metric-num">80%+</div><div class="metric-label">F2転換率</div></div><div class="metric"><div class="metric-num">60組</div><div class="metric-label">月間来店数</div></div></div>
+  </div>
+</div></section>
 
-  <section class="cta-section" id="contact"><div class="container fade-in">
-    <h2>お気軽にご相談ください</h2>
-    <p>シーシャバーの開業支援、マーケティング、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
-    <a href="mailto:info@degrp.info" class="btn btn-accent">お問い合わせ →</a>
-  </div></section>
+<section class="section" id="company"><div class="container">
+  <div class="section-header fade-in"><span class="section-tag">Company</span><h2 class="section-title">会社概要</h2></div>
+  <div class="company-table fade-in">
+    <div class="company-row"><div class="company-label">会社名</div><div class="company-value">株式会社DE group</div></div>
+    <div class="company-row"><div class="company-label">代表取締役</div><div class="company-value">相澤 彰臣</div></div>
+    <div class="company-row"><div class="company-label">設立</div><div class="company-value">令和7年1月8日</div></div>
+    <div class="company-row"><div class="company-label">資本金</div><div class="company-value">1,000,000円</div></div>
+    <div class="company-row"><div class="company-label">所在地</div><div class="company-value">宮城県仙台市青葉区立町1-12-203</div></div>
+    <div class="company-row"><div class="company-label">事業内容</div><div class="company-value"><ol class="biz-list"><li>インターネット・カタログ等通信販売</li><li>インターネットコンテンツサービスの提供</li><li>WEBサイトの企画立案、作成及び管理代行</li><li>WEBデザインほかインターネット関連のデザイン業務</li><li>マーケティング業務及び販売促進業務の支援及び代理業</li><li>生成AIの各種技術を応用したコンテンツの開発及び販売</li><li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li><li>知的財産権(著作権、特許権など)の売買及び売買代行</li><li>バー、クラブ等の飲食店の経営</li><li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li><li>古物商</li><li>前各号に関するコンサルティング事業</li><li>前各号に付帯関連する一切の事業</li></ol></div></div>
+  </div>
+</div></section>
 
-  <footer><div class="footer-inner"><div class="footer-logo">DE <span>group</span></div><small>© 2025 株式会社DE group. All rights reserved.</small></div></footer>
+<section class="cta-section" id="contact"><div class="container fade-in">
+  <h2>お気軽にご相談ください</h2>
+  <p>シーシャバーの開業支援、マーケティング、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
+  <a href="mailto:info@degrp.info" class="btn btn-accent">お問い合わせ →</a>
+</div></section>
 
-  <script>
-    const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-    window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,.3)':'none'});
-  </script>
+<footer><div class="footer-inner"><div class="footer-logo">DE <span>group</span></div><small>© 2025 株式会社DE group. All rights reserved.</small></div></footer>
+
+<script>
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,.06)':'none'});
+</script>
 </body>
 </html>
