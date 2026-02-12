@@ -61,7 +61,7 @@ hh<!DOCTYPE html>
     .consult-text h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
     .consult-text p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
     .consult-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-    .metric{text-align:center;padding:1.5rem;border-radius:12px;background:rgba(176,124,79,.06);border:1px solid rgba(176,124,79,.12)}
+    .metric{display:flex;align-items:center;gap:1rem;text-align:left;padding:1.5rem;border-radius:12px;background:rgba(176,124,79,.06);border:1px solid rgba(176,124,79,.12)}
     .metric-num{font-size:2rem;font-weight:900;color:var(--accent);letter-spacing:-0.02em}
     .metric-label{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
     .shop-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
@@ -103,7 +103,7 @@ hh<!DOCTYPE html>
     .case-text p{font-size:.88rem;color:var(--text-dim);line-height:1.8;margin-bottom:1rem}
     .case-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
     .case-tag{padding:.2rem .6rem;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent)}
-    @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-inner{flex-direction:column;gap:1rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-inner{flex-direction:column;gap:1rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr}}
     .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
   </style>
 </head>
