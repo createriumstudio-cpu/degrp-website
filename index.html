@@ -16,6 +16,9 @@
  <meta name="twitter:card" content="summary">
  <meta name="robots" content="index, follow">
  <meta name="format-detection" content="telephone=no">
+ <meta name="theme-color" content="#b07c4f">
+ <meta name="apple-mobile-web-app-title" content="DE group">
+ <meta name="application-name" content="DE group">
  <link rel="canonical" href="https://degrp-website.vercel.app/">
  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1a1a'/%3E%3Ctext x='10' y='68' font-family='Inter,sans-serif' font-weight='800' font-size='42' fill='%23ffffff'%3EDE%3C/text%3E%3Ctext x='58' y='68' font-family='Inter,sans-serif' font-weight='800' font-size='18' fill='%23b07c4f'%3Eg%3C/text%3E%3C/svg%3E">
  <link rel="preload" href="hero-bg.jpg" as="image">
@@ -143,6 +146,21 @@
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 /* Image lazy load fade */
 img[loading="lazy"]{opacity:0;transition:opacity .5s}img[loading="lazy"].loaded,img[loading="lazy"][complete]{opacity:1}
+
+/* Active nav state */
+.nav-links a.active{color:var(--accent);font-weight:600}
+/* Performance: content-visibility for off-screen sections */
+.section{content-visibility:auto;contain-intrinsic-size:auto 600px}
+/* Smooth page anchoring */
+html{scroll-padding-top:80px}
+/* Noscript styles */
+noscript .noscript-msg{text-align:center;padding:1rem;background:#fff3cd;color:#856404;font-size:.9rem}
+/* Print styles */
+@media print{nav,.back-to-top,.hero-actions,.cta-section,.mobile-overlay{display:none!important}.hero{min-height:auto;padding:2rem 0}.hero::before,.hero::after{display:none}body{color:#000;background:#fff}.section{break-inside:avoid}footer{border-top:1px solid #ccc}}
+/* Focus visible for accessibility */
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+/* Reduced motion preference */
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in{opacity:1!important;transform:none!important}}
  </style>
 
 <script type="application/ld+json">
@@ -154,6 +172,7 @@ img[loading="lazy"]{opacity:0;transition:opacity .5s}img[loading="lazy"].loaded,
 </head>
 <body>
 <a href="#business" class="skip-link">メインコンテンツへスキップ</a>
+<noscript><div class="noscript-msg">このサイトはJavaScriptを使用しています。JavaScriptを有効にしてください。</div></noscript>
 
 <nav role="navigation" aria-label="メインナビゲーション"><div class="nav-inner"><a href="#" class="logo" aria-label="DE group ホーム">DE <span>group</span></a><button class="hamburger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#results">Results</a></li><li><a href="#fc">FC</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
 <div class="mobile-overlay" aria-hidden="true"></div>
@@ -279,7 +298,7 @@ img[loading="lazy"]{opacity:0;transition:opacity .5s}img[loading="lazy"].loaded,
   </div>
  </div>
  <div class="footer-bottom">
-  <small>&copy; 2025 株式会社DE group. All rights reserved.</small>
+  <small>&copy; <span class="copyright-year">2025</span> 株式会社DE group. All rights reserved.</small>
   <div style="display:flex;gap:1.5rem">
   <a href="privacy.html" style="font-size:.72rem;color:var(--text-dim);text-decoration:none;transition:color .2s">プライバシーポリシー</a>
   <a href="tokushoho.html" style="font-size:.72rem;color:var(--text-dim);text-decoration:none;transition:color .2s">特定商取引法に基づく表示</a>
@@ -293,13 +312,13 @@ img[loading="lazy"]{opacity:0;transition:opacity .5s}img[loading="lazy"].loaded,
 const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-// Nav shadow on scroll
+// Nav shadow on scroll + back-to-top visibility
 const nav=document.querySelector('nav');
 const backToTop=document.querySelector('.back-to-top');
 window.addEventListener('scroll',()=>{
 nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,.06)':'none';
 if(backToTop)backToTop.classList.toggle('visible',window.scrollY>500);
-});
+},{passive:true});
 
 // Mobile hamburger menu
 const hamburger=document.querySelector('.hamburger');
@@ -310,13 +329,22 @@ const isOpen=navLinks.classList.toggle('active');
 hamburger.classList.toggle('active');
 overlay.classList.toggle('active');
 hamburger.setAttribute('aria-expanded',isOpen);
-hamburger.setAttribute('aria-label',isOpen?'メニューを閉じる':'メニューを開く');
+hamburger.setAttribute('aria-label',isOpen?'\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b':'\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f');
 document.body.style.overflow=isOpen?'hidden':'';
 }
 if(hamburger){hamburger.addEventListener('click',toggleMenu);overlay.addEventListener('click',toggleMenu);navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(navLinks.classList.contains('active'))toggleMenu()}))}
 
+// Active nav highlight on scroll
+const sections=document.querySelectorAll('section[id]');
+const navLinksAll=document.querySelectorAll('.nav-links a[href^="#"]');
+const sectionObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.getAttribute('id');navLinksAll.forEach(link=>{link.classList.toggle('active',link.getAttribute('href')==='#'+id)})}})},{threshold:.3,rootMargin:'-80px 0px -50% 0px'});
+sections.forEach(s=>sectionObserver.observe(s));
+
 // Lazy image fade-in
 document.querySelectorAll('img[loading="lazy"]').forEach(img=>{if(img.complete){img.classList.add('loaded')}else{img.addEventListener('load',()=>img.classList.add('loaded'))}});
+
+// Dynamic copyright year
+document.querySelectorAll('.copyright-year').forEach(el=>{el.textContent=new Date().getFullYear()});
 </script>
 </body>
 </html>
