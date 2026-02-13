@@ -128,16 +128,38 @@
  .case-tag{padding:.2rem .6rem;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent)}
  @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr}}
  .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* Skip to content */
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:.75rem 1.5rem;z-index:9999;border-radius:0 0 8px 8px;font-weight:600;transition:top .3s}.skip-link:focus{top:0}
+/* Mobile menu */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001;background:none;border:none}.hamburger span{display:block;width:24px;height:2px;background:var(--text);transition:all .3s}.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{position:fixed;top:0;right:-100%;width:70%;max-width:300px;height:100vh;background:#fff;flex-direction:column;padding:80px 2rem 2rem;transition:right .3s;z-index:1000;box-shadow:-4px 0 20px rgba(0,0,0,.1)}.nav-links.active{right:0}.mobile-overlay.active{display:block}.nav-links li{margin:0}.nav-links a{display:block;padding:.75rem 0;font-size:1rem}.nav-cta{margin-top:1rem}}
+/* Back to top */
+.back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--accent);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;z-index:100;box-shadow:0 4px 12px rgba(176,124,79,.3)}.back-to-top.visible{opacity:1;visibility:visible}.back-to-top:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(176,124,79,.4)}
+/* Address link */
+.address-link{color:inherit;text-decoration:none;transition:color .3s}.address-link:hover{color:var(--accent)}
+/* Breadcrumb hidden for SEO */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+/* Image lazy load fade */
+img[loading="lazy"]{opacity:0;transition:opacity .5s}img[loading="lazy"].loaded,img[loading="lazy"][complete]{opacity:1}
  </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Corporation","name":"株式会社DE group","alternateName":"DE group","url":"https://degrp-website.vercel.app/","telephone":"022-302-3023","address":{"@type":"PostalAddress","streetAddress":"立町1-12-203","addressLocality":"仙台市青葉区","addressRegion":"宮城県","postalCode":"980-0822","addressCountry":"JP"},"founder":{"@type":"Person","name":"相澤 彰臣"},"foundingDate":"2025-01-08","legalName":"株式会社DE group"}
+{"@context":"https://schema.org","@type":"Corporation","name":"株式会社DE group","alternateName":"DE group","url":"https://degrp-website.vercel.app/","telephone":"022-302-3023","address":{"@type":"PostalAddress","streetAddress":"立町1-12-203","addressLocality":"仙台市青葉区","addressRegion":"宮城県","postalCode":"980-0822","addressCountry":"JP"},"founder":{"@type":"Person","name":"相澤 彰臣"},"foundingDate":"2025-01-08","legalName":"株式会社DE group","description":"飲食事業・マーケティング支援・EC事業を展開する総合企業","numberOfEmployees":{"@type":"QuantitativeValue","value":"1-10"},"sameAs":[],"areaServed":{"@type":"Country","name":"JP"},"knowsAbout":["シーシャ","飲食店運営","マーケティング","EC販売","フランチャイズ"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"株式会社DE group","url":"https://degrp-website.vercel.app/","description":"飲食事業×マーケティング支援×EC事業","publisher":{"@type":"Corporation","name":"株式会社DE group"},"inLanguage":"ja"}
 </script>
 </head>
 <body>
+<a href="#business" class="skip-link">メインコンテンツへスキップ</a>
 
-<nav><div class="nav-inner"><a href="#" class="logo">DE <span>group</span></a><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#results">Results</a></li><li><a href="#fc">FC</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
+<nav role="navigation" aria-label="メインナビゲーション"><div class="nav-inner"><a href="#" class="logo" aria-label="DE group ホーム">DE <span>group</span></a><button class="hamburger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#results">Results</a></li><li><a href="#fc">FC</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
+<div class="mobile-overlay" aria-hidden="true"></div>
 
+<main id="main-content">
+<nav class="sr-only" aria-label="パンくずリスト"><ol itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="https://degrp-website.vercel.app/"><span itemprop="name">ホーム</span></a><meta itemprop="position" content="1"></li></ol></nav>
 <section class="hero"><div class="container">
  
  <h1 class="fade-in">「空間」と「仕組み」で、<br>熱狂と利益を実装する。</h1>
@@ -212,9 +234,9 @@
  <div class="company-row"><div class="company-label">会社名</div><div class="company-value">株式会社DE group</div></div>
  <div class="company-row"><div class="company-label">代表取締役</div><div class="company-value">相澤 彰臣</div></div>
  <div class="company-row"><div class="company-label">設立</div><div class="company-value">令和7年1月8日</div></div>
- <div class="company-row"><div class="company-label">所在地</div><div class="company-value">宮城県仙台市青葉区立町1-12-203</div></div>
+ <div class="company-row"><div class="company-label">所在地</div><div class="company-value"><a href="https://maps.google.com/maps?q=宮城県仙台市青葉区立町1-12-203" target="_blank" rel="noopener noreferrer" class="address-link">宮城県仙台市青葉区立町1-12-203</a></div></div>
  <div class="company-row"><div class="company-label">電話番号</div><div class="company-value"><a href="tel:022-302-3023" style="color:var(--text);text-decoration:none">022-302-3023</a></div></div>
- <div class="company-row"><div class="company-label">法人番号</div><div class="company-value">2370001052134</div></div>
+ <div class="company-row"><div class="company-label">法人番号</div><div class="company-value"><a href="https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=2370001052134" target="_blank" rel="noopener noreferrer" class="address-link">2370001052134</a></div></div>
  <div class="company-row"><div class="company-label">事業内容</div><div class="company-value"><ol class="biz-list"><li>インターネット・カタログ等通信販売</li><li>インターネットコンテンツサービスの提供</li><li>WEBサイトの企画立案、作成及び管理代行</li><li>WEBデザインほかインターネット関連のデザイン業務</li><li>マーケティング業務及び販売促進業務の支援及び代理業</li><li>生成AIの各種技術を応用したコンテンツの開発及び販売</li><li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li><li>知的財産権(著作権、特許権など)の売買及び売買代行</li><li>バー、クラブ等の飲食店の経営</li><li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li><li>古物商</li><li>前各号に関するコンサルティング事業</li><li>前各号に付帯関連する一切の事業</li></ol></div></div>
  </div>
 </div></section>
@@ -226,8 +248,11 @@
  <a href="tel:022-302-3023" class="btn btn-accent">電話で問い合わせ →</a>
  </div>
 </div></section>
+</main>
 
-<footer>
+
+<button class="back-to-top" aria-label="ページトップへ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+<footer role="contentinfo">
  <div class="footer-inner">
  <div class="footer-top">
   <div class="footer-brand">
@@ -243,12 +268,13 @@
    <li><a href="#fc">Franchise</a></li>
    <li><a href="#shop">Shop</a></li>
    <li><a href="#company">Company</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   </div>
   <div class="footer-contact">
   <h4>Contact</h4>
   <p>〒980-0822</p>
-  <p>宮城県仙台市青葉区立町1-12-203</p>
+  <p><a href="https://maps.google.com/maps?q=宮城県仙台市青葉区立町1-12-203" target="_blank" rel="noopener noreferrer" class="address-link">宮城県仙台市青葉区立町1-12-203</a></p>
   <p style="margin-top:.5rem"><a href="tel:022-302-3023">Tel: 022-302-3023</a></p>
   </div>
  </div>
@@ -263,9 +289,34 @@
 </footer>
 
 <script>
+// Intersection Observer for fade-in
 const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,.06)':'none'});
+
+// Nav shadow on scroll
+const nav=document.querySelector('nav');
+const backToTop=document.querySelector('.back-to-top');
+window.addEventListener('scroll',()=>{
+nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,.06)':'none';
+if(backToTop)backToTop.classList.toggle('visible',window.scrollY>500);
+});
+
+// Mobile hamburger menu
+const hamburger=document.querySelector('.hamburger');
+const navLinks=document.querySelector('.nav-links');
+const overlay=document.querySelector('.mobile-overlay');
+function toggleMenu(){
+const isOpen=navLinks.classList.toggle('active');
+hamburger.classList.toggle('active');
+overlay.classList.toggle('active');
+hamburger.setAttribute('aria-expanded',isOpen);
+hamburger.setAttribute('aria-label',isOpen?'メニューを閉じる':'メニューを開く');
+document.body.style.overflow=isOpen?'hidden':'';
+}
+if(hamburger){hamburger.addEventListener('click',toggleMenu);overlay.addEventListener('click',toggleMenu);navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(navLinks.classList.contains('active'))toggleMenu()}))}
+
+// Lazy image fade-in
+document.querySelectorAll('img[loading="lazy"]').forEach(img=>{if(img.complete){img.classList.add('loaded')}else{img.addEventListener('load',()=>img.classList.add('loaded'))}});
 </script>
 </body>
 </html>
