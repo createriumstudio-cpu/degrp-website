@@ -1,204 +1,243 @@
-hhh<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社DE group | 飲食事業 × マーケティング支援 × EC事業</title>
-  <meta name="description" content="株式会社DE groupは飲食店運営・マーケティング支援・EC販売・フランチャイズ展開を展開。ヒトサラ全国1位の実績を持つ総合企業です。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#ffffff;--accent:#b07c4f;--accent-dark:#8d6340;--accent-light:#d4a574;--surface:#ffffff;--surface-light:#f8f6f3;--surface-card:#ffffff;--text:#1a1a1a;--text-dim:rgba(26,26,26,0.55);--border:rgba(0,0,0,0.08);--radius:16px}
-    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-    body{font-family:'Inter','Noto Sans JP',sans-serif;color:var(--text);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.7}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;backdrop-filter:blur(24px);background:rgba(255,255,255,0.85);border-bottom:1px solid var(--border);transition:all .3s}
-    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-size:1.3rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.02em}.logo span{color:var(--accent)}
-    .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-    .nav-links a{text-decoration:none;color:var(--text-dim);font-size:.8rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:var(--accent)}
-    .nav-cta{background:var(--accent)!important;color:#fff!important;padding:.55rem 1.4rem;border-radius:100px;font-weight:700!important;font-sizeh:.8rem!important;transition:all .2s}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(176,124,79,.3)}
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:10rem 2rem 6rem;position:relative;overflow:hidden;background:url('hero-bg.jpg') center center/cover no-repeat;background-color:#1a1510}
-    .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1}
-    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;backghround:linear-gradient(90dheg,transparent,var(--accent-light),transparent);opacity:.3}
-    .hero .container{position:relative;z-index:2}    .hero-label{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1.2rem;border:1px solid rgba(176,124,79,.3);border-radius:100px;font-size:.75rem;font-weight:500;color:var(--accent);letter-spacing:.1em;margin-bottom:2.5rem}
-    .hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-    .hero h1{font-size:clamp(1.5rem,5.5vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
-    .hero-desc{font-size:clamp(0.95rem,2.8vw,1.05rem);color:rgba(255,255,255,0.75);max-width:620px;margin:0 auto 3rem;line-height:1.9}
-    .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .btn{padding:.9rem 2.2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem}
-    .btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(176,124,79,.2)}.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(176,124,79,.3)}
-    .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,0.3)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-    .section{padding:7rem 2rem}.container{max-width:1200px;margin:0 auto}
-    .section-header{text-align:center;margin-bottom:4rem}
-    .section-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1rem;display:block}
-    .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;color:var(--text)}
-    .section-desc{font-size:.95rem;color:var(--text-dim);max-width:600px;margin:0 auto}
-    .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-    .biz-card{padding:2.5rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-    .biz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .35s}
-    .biz-card:hover{border-color:rgba(176,124,79,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}.biz-card:hover::before{opacity:1}
-    .biz-num{font-size:.7rem;font-weight:700;color:var(--accent);letter-spacing:.15em;margin-bottom:1.5rem;text-transform:uppercase}
-    .biz-card h3{font-size:1.25rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
-    .biz-card p{font-size:.88rem;color:var(--text-dim);line-height:1.8}
-    .biz-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;text-decoration:none;margin-top:1.5rem;transition:gap .2s}.biz-link:hover{gap:.7rem}
-    .biz-badge{display:inline-block;padding:.2rem .7rem;border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:.05em;margin-top:.75rem}
-    .badge-gold{background:rgba(176,124,79,.1);color:var(--accent)}
-    .badge-blue{background:rgba(59,130,246,.1);color:#3b82f6}
-    .badge-green{background:rgba(34,197,94,.1);color:#16a34a}
-    .store-section{background:var(--surface-light)}
-    .store-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .store-visual{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);position:relative}
-    .store-visual img{width:100%;height:100%;object-fit:cover}
-    .store-info h3{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
-    .store-info .store-sub{font-size:.85rem;color:var(--accent);margin-bottom:1.5rem;font-weight:500;letter-spacing:.05em}
-    .store-info p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:2rem}
-    .store-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
-    .store-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent);border:1px solid rgba(176,124,79,.15)}
-    .consult-card{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-    .consult-visual{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
-    .consult-visual img{width:100%;height:100%;object-fit:cover}
-    .consult-text h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
-    .consult-text p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
-    .consult-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-    .metric{display:flex;align-items:center;gap:1rem;text-align:left;padding:1.5rem;border-radius:12px;background:rgba(176,124,79,.06);border:1px solid rgba(176,124,79,.12)}
-    .metric-num{font-size:2rem;font-weight:900;color:var(--accent);letter-spacing:-0.02em}
-    .metric-label{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
-    .shop-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
-    .shop-item{border-radius:12px;overflow:hidden;background:var(--surface-card);border:1px solid var(--border);transition:all .3s;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-    .shop-item:hover{border-color:rgba(176,124,79,.25);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
-    .shop-img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#f8f2ec,#f0e6db)} .shop-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s} .shop-item:hover .shop-img img{transform:scale(1.05)}
-    .shop-item-info{padding:1rem}.shop-item-name{font-size:.82rem;font-weight:600;margin-bottom:.3rem;line-height:1.4;color:var(--text)}.shop-item-cat{font-size:.7rem;color:var(--text-dim)}
-    .fc-section{background:var(--surface-light)}
-    .fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .fc-content h3{font-size:1.8rem;font-weight:800;margin-bottom:1rem;color:var(--text)}
-    .fc-content p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:1.5rem}
-    .fc-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
-    .fc-feature{padding:1.2rem;border-radius:12px;background:var(--surface-card);border:1px solid var(--border)}
-    .fc-feature-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
-    .fc-feature-desc{font-size:.75rem;color:var(--text-dim)}
-    .fc-visual{padding:3rem;border-radius:var(--radius);background:linear-gradient(135deg,#f5ebe0,#e8d5c4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1.5rem;min-height:400px}
-    .fc-icon{font-size:4rem}
-    .fc-visual h4{font-size:1.3rem;font-weight:800;color:var(--accent-dark)}
-    .fc-visual p{font-size:.85rem;color:var(--text-dim)}
-    .company-table{max-width:800px;margin:0 auto}
-    .company-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--border);padding:1.2rem 0;gap:2rem}
-    .company-label{font-size:.8rem;font-weight:600;color:var(--text-dim)}.company-value{font-size:.9rem;color:var(--text)}
-    .biz-list{list-style:none;padding:0;counter-reset:item}
-    .biz-list li{counter-increment:item;font-size:.85rem;line-height:1.9;padding-left:2rem;position:relative;color:var(--text)}
-    .biz-list li::before{content:counter(item) '.';position:absolute;left:0;color:var(--accent);font-weight:600;font-size:.75rem}
-    .cta-section{text-align:center;padding:6rem 2rem;position:relative;overflow:hidden;background:var(--surface-light)}
-    .cta-section::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(176,124,79,.08),transparent 70%)}
-    .cta-section h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1rem;position:relative;color:var(--text)}
-    .cta-section p{font-size:.95rem;color:var(--text-dim);margin-bottom:2.5rem;position:relative}
-    footer{border-top:1px solid var(--border);padding:3rem 2rem;background:var(--surface)}
-    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-    .footer-logo{font-size:1rem;font-weight:700;color:var(--text)}.footer-logo span{color:var(--accent)}
-    footer small{font-size:.75rem;color:var(--text-dim)}
-    .case-card{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-top:2rem}
-    .case-visual{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
-    .case-visual img{width:100%;height:100%;object-fit:cover}
-    .case-text h4{font-size:1.2rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
-    .case-text .case-sub{font-size:.8rem;color:var(--accent);margin-bottom:1rem;font-weight:500}
-    .case-text p{font-size:.88rem;color:var(--text-dim);line-height:1.8;margin-bottom:1rem}
-    .case-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:h1rem}
-    .case-tag{padding:.2rem .6rem;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent)}
-    @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-inner{flex-direction:column;gap:1rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr}}
-    .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
-  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>株式会社DE group | 飲食事業 × マーケティング支援 × EC事業</title>
+ <meta name="description" content="株式会社DE groupは飲食店運営・マーケティング支援・EC販売・フランチャイズ展開を展開。ヒトサラ全国1位の実績を持つ総合企業です。">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+ <style>
+ :root{--primary:#ffffff;--accent:#b07c4f;--accent-dark:#8d6340;--accent-light:#d4a574;--surface:#ffffff;--surface-light:#f8f6f3;--surface-card:#ffffff;--text:#1a1a1a;--text-dim:rgba(26,26,26,0.55);--border:rgba(0,0,0,0.08);--radius:16px}
+ *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+ body{font-family:'Inter','Noto Sans JP',sans-serif;color:var(--text);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.7}
+ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;backdrop-filter:blur(24px);background:rgba(255,255,255,0.85);border-bottom:1px solid var(--border);transition:all .3s}
+ .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+ .logo{font-size:1.3rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.02em}.logo span{color:var(--accent)}
+ .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+ .nav-links a{text-decoration:none;color:var(--text-dim);font-size:.8rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:var(--accent)}
+ .nav-cta{background:var(--accent)!important;color:#fff!important;padding:.55rem 1.4rem;border-radius:100px;font-weight:700!important;font-size:.8rem!important;transition:all .2s}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(176,124,79,.3)}
+ .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:10rem 2rem 6rem;position:relative;overflow:hidden;background:url('hero-bg.jpg') center center/cover no-repeat;background-color:#1a1510}
+ .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1}
+ .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent-light),transparent);opacity:.3}
+ .hero .container{position:relative;z-index:2} .hero-label{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1.2rem;border:1px solid rgba(176,124,79,.3);border-radius:100px;font-size:.75rem;font-weight:500;color:var(--accent);letter-spacing:.1em;margin-bottom:2.5rem}
+ .hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+ @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+ .hero h1{font-size:clamp(1.5rem,5.5vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
+ .hero-desc{font-size:clamp(0.95rem,2.8vw,1.05rem);color:rgba(255,255,255,0.75);max-width:620px;margin:0 auto 3rem;line-height:1.9}
+ .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+ .btn{padding:.9rem 2.2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem}
+ .btn-accent{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(176,124,79,.2)}.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(176,124,79,.3)}
+ .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,0.3)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+ .section{padding:7rem 2rem}.container{max-width:1200px;margin:0 auto}
+ .section-header{text-align:center;margin-bottom:4rem}
+ .section-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1rem;display:block}
+ .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;color:var(--text)}
+ .section-desc{font-size:.95rem;color:var(--text-dim);max-width:600px;margin:0 auto}
+ .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+ .biz-card{padding:2.5rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+ .biz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .35s}
+ .biz-card:hover{border-color:rgba(176,124,79,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}.biz-card:hover::before{opacity:1}
+ .biz-num{font-size:.7rem;font-weight:700;color:var(--accent);letter-spacing:.15em;margin-bottom:1.5rem;text-transform:uppercase}
+ .biz-card h3{font-size:1.25rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
+ .biz-card p{font-size:.88rem;color:var(--text-dim);line-height:1.8}
+ .biz-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;text-decoration:none;margin-top:1.5rem;transition:gap .2s}.biz-link:hover{gap:.7rem}
+ .biz-badge{display:inline-block;padding:.2rem .7rem;border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:.05em;margin-top:.75rem}
+ .badge-gold{background:rgba(176,124,79,.1);color:var(--accent)}
+ .badge-blue{background:rgba(59,130,246,.1);color:#3b82f6}
+ .badge-green{background:rgba(34,197,94,.1);color:#16a34a}
+ .store-section{background:var(--surface-light)}
+ .store-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+ .store-visual{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);position:relative}
+ .store-visual img{width:100%;height:100%;object-fit:cover}
+ .store-info h3{font-size:1.8rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
+ .store-info .store-sub{font-size:.85rem;color:var(--accent);margin-bottom:1.5rem;font-weight:500;letter-spacing:.05em}
+ .store-info p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:2rem}
+ .store-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+ .store-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent);border:1px solid rgba(176,124,79,.15)}
+ .consult-card{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+ .consult-visual{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+ .consult-visual img{width:100%;height:100%;object-fit:cover}
+ .consult-text h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--text)}
+ .consult-text p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
+ .consult-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+ .metric{display:flex;align-items:center;gap:1rem;text-align:left;padding:1.5rem;border-radius:12px;background:rgba(176,124,79,.06);border:1px solid rgba(176,124,79,.12)}
+ .metric-num{font-size:2rem;font-weight:900;color:var(--accent);letter-spacing:-0.02em}
+ .metric-label{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
+ .shop-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+ .shop-item{border-radius:12px;overflow:hidden;background:var(--surface-card);border:1px solid var(--border);transition:all .3s;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+ .shop-item:hover{border-color:rgba(176,124,79,.25);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+ .shop-img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg,#f8f2ec,#f0e6db)} .shop-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s} .shop-item:hover .shop-img img{transform:scale(1.05)}
+ .shop-item-info{padding:1rem}.shop-item-name{font-size:.82rem;font-weight:600;margin-bottom:.3rem;line-height:1.4;color:var(--text)}.shop-item-cat{font-size:.7rem;color:var(--text-dim)}
+ .fc-section{background:var(--surface-light)}
+ .fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+ .fc-content h3{font-size:1.8rem;font-weight:800;margin-bottom:1rem;color:var(--text)}
+ .fc-content p{font-size:.92rem;color:var(--text-dim);line-height:1.9;margin-bottom:1.5rem}
+ .fc-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+ .fc-feature{padding:1.2rem;border-radius:12px;background:var(--surface-card);border:1px solid var(--border)}
+ .fc-feature-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+ .fc-feature-desc{font-size:.75rem;color:var(--text-dim)}
+ .fc-visual{padding:3rem;border-radius:var(--radius);background:linear-gradient(135deg,#f5ebe0,#e8d5c4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1.5rem;min-height:400px}
+ .fc-icon{font-size:4rem}
+ .fc-visual h4{font-size:1.3rem;font-weight:800;color:var(--accent-dark)}
+ .fc-visual p{font-size:.85rem;color:var(--text-dim)}
+ .company-table{max-width:800px;margin:0 auto}
+ .company-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--border);padding:1.2rem 0;gap:2rem}
+ .company-label{font-size:.8rem;font-weight:600;color:var(--text-dim)}.company-value{font-size:.9rem;color:var(--text)}
+ .biz-list{list-style:none;padding:0;counter-reset:item}
+ .biz-list li{counter-increment:item;font-size:.85rem;line-height:1.9;padding-left:2rem;position:relative;color:var(--text)}
+ .biz-list li::before{content:counter(item) '.';position:absolute;left:0;color:var(--accent);font-weight:600;font-size:.75rem}
+ .cta-section{text-align:center;padding:6rem 2rem;position:relative;overflow:hidden;background:var(--surface-light)}
+ .cta-section::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(176,124,79,.08),transparent 70%)}
+ .cta-section h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1rem;position:relative;color:var(--text)}
+ .cta-section p{font-size:.95rem;color:var(--text-dim);margin-bottom:2.5rem;position:relative}
+ footer{border-top:1px solid var(--border);padding:4rem 2rem 2rem;background:var(--surface)}
+ .footer-inner{max-width:1200px;margin:0 auto}
+ .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+ .footer-brand .footer-logo{font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:1rem;display:block}.footer-brand .footer-logo span{color:var(--accent)}
+ .footer-brand p{font-size:.82rem;color:var(--text-dim);line-height:1.8;max-width:300px}
+ .footer-nav h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--text);margin-bottom:1rem}
+ .footer-nav ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.6rem}
+ .footer-nav ul li a{text-decoration:none;color:var(--text-dim);font-size:.82rem;transition:color .2s}.footer-nav ul li a:hover{color:var(--accent)}
+ .footer-contact h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--text);margin-bottom:1rem}
+ .footer-contact p{font-size:.82rem;color:var(--text-dim);line-height:1.8;margin-bottom:.3rem}
+ .footer-contact a{color:var(--accent);text-decoration:none;font-size:.82rem;transition:opacity .2s}.footer-contact a:hover{opacity:.7}
+ .footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center}
+ .footer-bottom small{font-size:.72rem;color:var(--text-dim)}
+ .case-card{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:3rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-top:2rem}
+ .case-visual{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+ .case-visual img{width:100%;height:100%;object-fit:cover}
+ .case-text h4{font-size:1.2rem;font-weight:800;margin-bottom:.5rem;color:var(--text)}
+ .case-text .case-sub{font-size:.8rem;color:var(--accent);margin-bottom:1rem;font-weight:500}
+ .case-text p{font-size:.88rem;color:var(--text-dim);line-height:1.8;margin-bottom:1rem}
+ .case-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+ .case-tag{padding:.2rem .6rem;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent)}
+ @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr}}
+ .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+ </style>
 </head>
 <body>
 
 <nav><div class="nav-inner"><a href="#" class="logo">DE <span>group</span></a><ul class="nav-links"><li><a href="#business">Business</a></li><li><a href="#store">Store</a></li><li><a href="#results">Results</a></li><li><a href="#fc">FC</a></li><li><a href="#shop">Shop</a></li><li><a href="#company">Company</a></li><li><a href="#contact" class="nav-cta">Contact</a></li></ul></div></nav>
 
 <section class="hero"><div class="container">
-  
-  <h1 class="fade-in">「空間」と「仕組み」で、<br>熱狂と利益を実装する。</h1>
-  <p class="hero-desc fade-in">SNSフォロワー1万人超×ヒトサラ全国1位。<br>クリエイティブとマーケティングの両輪で、飲食事業の成功を支援します。</p>
-  <div class="hero-actions fade-in">
-    <a href="#business" class="btn btn-accent">事業を見る →</a>
-    <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
-  </div>
+ 
+ <h1 class="fade-in">「空間」と「仕組み」で、<br>熱狂と利益を実装する。</h1>
+ <p class="hero-desc fade-in">SNSフォロワー1万人超×ヒトサラ全国1位。<br>クリエイティブとマーケティングの両輪で、飲食事業の成功を支援します。</p>
+ <div class="hero-actions fade-in">
+ <a href="#business" class="btn btn-accent">事業を見る →</a>
+ <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
+ </div>
 </div></section>
 
 <section class="section" id="business"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Business</span><h2 class="section-title">4つの事業領域</h2><p class="section-desc">シーシャカルチャーを起点に、マーケティング・EC・フランチャイズを横断する事業を展開しています。</p></div>
-  <div class="biz-grid">
-    <div class="biz-card fade-in"><div class="biz-num">01 — Shisha Bar</div><h3>シーシャバー運営・都内展開</h3><p>仙台・国分町で「Candle Chill」を運営し、Instagramフォロワー1万人を達成。今後、都内への多店舗展開を計画中。キャンドルが灯る癒しの空間で、本格シーシャ体験を提供します。</p><span class="biz-badge badge-gold">Instagram 1万フォロワー達成</span><br><a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill →</a></div>
-    <div class="biz-card fade-in"><div class="biz-num">02 — Consulting</div><h3>飲食店トータル運営代行</h3><p>集客、SNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行。支援先「鶏 炭火 地酒 松もと」をヒトサラ全国ランキング1位に導いた実績があります。</p><span class="biz-badge badge-gold">ヒトサラ全国1位の実績</span><br><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">鶏 炭火 地酒 松もと →</a></div>
-    <div class="biz-card fade-in"><div class="biz-num">03 — Franchise</div><h3>FC加盟店の募集・支援</h3><p>シーシャ店のフランチャイズ展開を推進。AIによる分析・集客・業務効率化のノウハウをFC加盟店へ提供し、オーナーの成功を全面的にバックアップします。</p><span class="biz-badge badge-green">FC加盟店募集予定</span></div>
-    <div class="biz-card fade-in"><div class="biz-num">04 — EC / Online Shop</div><h3>シーシャ関連EC販売</h3><p>海外から仕入れたフレーバー、ボウル、フーカー本体など厳選したシーシャ関連商品をオンラインで販売。中古備品の買取・販売などリユース事業も展開し、サステナブルなシーシャ文化を推進します。</p><span class="biz-badge badge-green">ネットショップ準備中</span></div>
-  </div>
+ <div class="section-header fade-in"><span class="section-tag">Business</span><h2 class="section-title">4つの事業領域</h2><p class="section-desc">シーシャカルチャーを起点に、マーケティング・EC・フランチャイズを横断する事業を展開しています。</p></div>
+ <div class="biz-grid">
+ <div class="biz-card fade-in"><div class="biz-num">01 — Shisha Bar</div><h3>シーシャバー運営・都内展開</h3><p>仙台・国分町で「Candle Chill」を運営し、Instagramフォロワー1万人を達成。今後、都内への多店舗展開を計画中。キャンドルが灯る癒しの空間で、本格シーシャ体験を提供します。</p><span class="biz-badge badge-gold">Instagram 1万フォロワー達成</span><br><a href="https://www.candlechill-sendai.com/" class="biz-link" target="_blank" rel="noopener">Candle Chill →</a></div>
+ <div class="biz-card fade-in"><div class="biz-num">02 — Consulting</div><h3>飲食店トータル運営代行</h3><p>集客、SNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行。支援先「鶏 炭火 地酒 松もと」をヒトサラ全国ランキング1位に導いた実績があります。</p><span class="biz-badge badge-gold">ヒトサラ全国1位の実績</span><br><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">鶏 炭火 地酒 松もと →</a></div>
+ <div class="biz-card fade-in"><div class="biz-num">03 — Franchise</div><h3>FC加盟店の募集・支援</h3><p>シーシャ店のフランチャイズ展開を推進。AIによる分析・集客・業務効率化のノウハウをFC加盟店へ提供し、オーナーの成功を全面的にバックアップします。</p><span class="biz-badge badge-green">FC加盟店募集予定</span></div>
+ <div class="biz-card fade-in"><div class="biz-num">04 — EC / Online Shop</div><h3>シーシャ関連EC販売</h3><p>海外から仕入れたフレーバー、ボウル、フーカー本体など厳選したシーシャ関連商品をオンラインで販売。中古備品の買取・販売などリユース事業も展開し、サステナブルなシーシャ文化を推進します。</p><span class="biz-badge badge-green">ネットショップ準備中</span></div>
+ </div>
 </div></section>
 
 <section class="section store-section" id="store"><div class="container"><div class="store-grid fade-in">
-  <div class="store-visual"><img src="https://github.com/user-attachments/assets/1bbb4c14-f66f-460a-98a7-41284cebe486" alt="Candle Chill - フーカーとキャンドルの空間" loading="lazy"></div>
-  <div class="store-info"><span class="section-tag">Flagship Store</span><h3>Candle Chill</h3><div class="store-sub">Shisha Cafe &amp; Bar — 仙台・国分町 → 都内展開予定</div>
-  <div class="store-badges"><span class="store-badge">🕯️ キャンドル空間</span><span class="store-badge">📱 Instagram 1万フォロワー</span><span class="store-badge">🗼 都内展開予定</span></div>
-  <p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。仙台での成功モデルをもとに、今後は東京都内への展開を計画しています。</p><a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ →</a></div>
+ <div class="store-visual"><img src="https://github.com/user-attachments/assets/1bbb4c14-f66f-460a-98a7-41284cebe486" alt="Candle Chill - フーカーとキャンドルの空間" loading="lazy"></div>
+ <div class="store-info"><span class="section-tag">Flagship Store</span><h3>Candle Chill</h3><div class="store-sub">Shisha Cafe &amp; Bar — 仙台・国分町 → 都内展開予定</div>
+ <div class="store-badges"><span class="store-badge">🕯️ キャンドル空間</span><span class="store-badge">📱 Instagram 1万フォロワー</span><span class="store-badge">🗼 都内展開予定</span></div>
+ <p>キャンドルの灯りが揺れる空間で、上質なシーシャ体験を。厳選されたフレーバーと、こだわりのドリンクメニューで、特別なひとときをお過ごしいただけます。仙台での成功モデルをもとに、今後は東京都内への展開を計画しています。</p><a href="https://www.candlechill-sendai.com/" class="btn btn-accent" target="_blank" rel="noopener">店舗サイトへ →</a></div>
 </div></div></section>
 
 <section class="section" id="results"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Results</span><h2 class="section-title">実績・支援事例</h2><p class="section-desc">データドリブンなアプローチで、圧倒的な成果を実現しています。</p></div>
-  <div class="consult-card fade-in">
-    <div class="consult-text"><h3>数字が証明する実力</h3><p>支援先の飲食店をヒトサラ全国ランキング1位に導き、自社SNSではInstagramフォロワー1万人を突破。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p></div>
-    <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ヒトサラ全国ランキング</div></div><div class="metric"><div class="metric-num">1万</div><div class="metric-label">Instagramフォロワー</div></div></div>
-  </div>
-  <div class="case-card fade-in">
-    <div class="case-visual"><img src="https://tori-matumoto.com/wp-content/uploads/2023/06/662000.jpg" alt="鶏 炭火 地酒 松もと" loading="lazy"></div>
-    <div class="case-text"><span class="section-tag">Case Study</span><h4>鶏 炭火 地酒 松もと</h4><div class="case-sub">仙台・焼き鳥店 — ヒトサラ全国1位達成</div>
-    <div class="case-tags"><span class="case-tag">集客支援</span><span class="case-tag">SNSマーケティング</span><span class="case-tag">デジタルサイネージ</span><span class="case-tag">HP制作・運用</span><span class="case-tag">トータル運営代行</span></div>
-    <p>集客からSNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行を担当。データに基づいた戦略により、ヒトサラ全国ランキング1位を獲得しました。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">店舗サイトを見る →</a></div>
-  </div>
+ <div class="section-header fade-in"><span class="section-tag">Results</span><h2 class="section-title">実績・支援事例</h2><p class="section-desc">データドリブンなアプローチで、圧倒的な成果を実現しています。</p></div>
+ <div class="consult-card fade-in">
+ <div class="consult-text"><h3>数字が証明する実力</h3><p>支援先の飲食店をヒトサラ全国ランキング1位に導き、自社SNSではInstagramフォロワー1万人を突破。AI技術の導入により制作コストを従来の3分の1に圧縮し、高品質と効率化を両立しています。</p></div>
+ <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ヒトサラ全国ランキング</div></div><div class="metric"><div class="metric-num">1万</div><div class="metric-label">Instagramフォロワー</div></div></div>
+ </div>
+ <div class="case-card fade-in">
+ <div class="case-visual"><img src="https://tori-matumoto.com/wp-content/uploads/2023/06/662000.jpg" alt="鶏 炭火 地酒 松もと" loading="lazy"></div>
+ <div class="case-text"><span class="section-tag">Case Study</span><h4>鶏 炭火 地酒 松もと</h4><div class="case-sub">仙台・焼き鳥店 — ヒトサラ全国1位達成</div>
+ <div class="case-tags"><span class="case-tag">集客支援</span><span class="case-tag">SNSマーケティング</span><span class="case-tag">デジタルサイネージ</span><span class="case-tag">HP制作・運用</span><span class="case-tag">トータル運営代行</span></div>
+ <p>集客からSNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行を担当。データに基づいた戦略により、ヒトサラ全国ランキング1位を獲得しました。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">店舗サイトを見る →</a></div>
+ </div>
 </div></section>
 
 <section class="section fc-section" id="fc"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Franchise</span><h2 class="section-title">FC加盟店の募集</h2><p class="section-desc">成功モデルとAI技術で、あなたのシーシャ店経営をサポートします。</p></div>
-  <div class="fc-grid fade-in">
-    <div class="fc-content"><h3>AIで加速する<br>シーシャビジネス</h3><p>Candle Chillで培った店舗運営ノウハウと、最先端のAI技術を組み合わせたフランチャイズパッケージ。集客からオペレーションまで、オーナーの成功を全面サポートします。</p>
-    <div class="fc-features">
-      <div class="fc-feature"><div class="fc-feature-title">🤖 AI分析</div><div class="fc-feature-desc">顧客データ分析による最適な経営判断</div></div>
-      <div class="fc-feature"><div class="fc-feature-title">📈 AI集客</div><div class="fc-feature-desc">AIによるSNS運用・広告最適化</div></div>
-      <div class="fc-feature"><div class="fc-feature-title">⚡ 業務効率化</div><div class="fc-feature-desc">AIツールによるオペレーション自動化</div></div>
-      <div class="fc-feature"><div class="fc-feature-title">🎓 開業支援</div><div class="fc-feature-desc">物件選定から内装・メニュー構築まで</div></div>
-    </div>
-    <a href="#contact" class="btn btn-accent">FC加盟について相談する →</a>
-    </div>
-    <div class="fc-visual" style="padding:0;overflow:hidden;border-radius:var(--radius)"><img src="https://github.com/user-attachments/assets/85a12fd3-61b5-4672-aa97-ec0da02e1275" alt="シーシャラウンジ内装" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
-  </div>
+ <div class="section-header fade-in"><span class="section-tag">Franchise</span><h2 class="section-title">FC加盟店の募集</h2><p class="section-desc">成功モデルとAI技術で、あなたのシーシャ店経営をサポートします。</p></div>
+ <div class="fc-grid fade-in">
+ <div class="fc-content"><h3>AIで加速する<br>シーシャビジネス</h3><p>Candle Chillで培った店舗運営ノウハウと、最先端のAI技術を組み合わせたフランチャイズパッケージ。集客からオペレーションまで、オーナーの成功を全面サポートします。</p>
+ <div class="fc-features">
+ <div class="fc-feature"><div class="fc-feature-title">🤖 AI分析</div><div class="fc-feature-desc">顧客データ分析による最適な経営判断</div></div>
+ <div class="fc-feature"><div class="fc-feature-title">📈 AI集客</div><div class="fc-feature-desc">AIによるSNS運用・広告最適化</div></div>
+ <div class="fc-feature"><div class="fc-feature-title">⚡ 業務効率化</div><div class="fc-feature-desc">AIツールによるオペレーション自動化</div></div>
+ <div class="fc-feature"><div class="fc-feature-title">🎓 開業支援</div><div class="fc-feature-desc">物件選定から内装・メニュー構築まで</div></div>
+ </div>
+ <a href="#contact" class="btn btn-accent">FC加盟について相談する →</a>
+ </div>
+ <div class="fc-visual" style="padding:0;overflow:hidden;border-radius:var(--radius)"><img src="https://github.com/user-attachments/assets/85a12fd3-61b5-4672-aa97-ec0da02e1275" alt="シーシャラウンジ内装" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+ </div>
 </div></section>
 
 <section class="section" id="shop"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Online Shop</span><h2 class="section-title">シーシャ関連商品の販売</h2><p class="section-desc">海外直輸入のフレーバー、備品からリユース品まで。<br>シーシャに必要なすべてをオンラインでお届けします。</p></div>
-  <div class="shop-preview fade-in">
-    <div class="shop-item"><div class="shop-img"><img src="https://github.com/user-attachments/assets/ca04b008-b5b1-4fe9-821b-a288cc9ad40e" alt="シーシャフレーバー各種" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">フレーバー各種</div><div class="shop-item-cat">海外直輸入 / 厳選ブランド</div></div></div>
-    <div class="shop-item"><div class="shop-img"><img src="bowl-heat-management.jpg" alt="シーシャボウル＆ヒートマネジメント" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">ボウル / ヒートマネジメント</div><div class="shop-item-cat">Cosmo Bowl / Kaloud 他</div></div></div>
-    <div class="shop-item"><div class="shop-img"><img src="https://github.com/user-attachments/assets/130132b8-e4b3-471d-af67-319075eda5cd" alt="フーカー本体" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">フーカー本体</div><div class="shop-item-cat">Ocean Hookah / WD Hookah 他</div></div></div>
-    <div class="shop-item"><div class="shop-img"><img src="https://github.com/user-attachments/assets/ba2704c4-3f49-4e60-a37f-affad7fbebbd" alt="リユース・中古買取" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">リユース / 中古買取</div><div class="shop-item-cat">中古備品の買取・販売</div></div></div>
-  </div>
-  <div style="text-align:center;margin-top:3rem" class="fade-in"><p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p></div>
+ <div class="section-header fade-in"><span class="section-tag">Online Shop</span><h2 class="section-title">シーシャ関連商品の販売</h2><p class="section-desc">海外直輸入のフレーバー、備品からリユース品まで。<br>シーシャに必要なすべてをオンラインでお届けします。</p></div>
+ <div class="shop-preview fade-in">
+ <div class="shop-item"><div class="shop-img"><img src="https://github.com/user-attachments/assets/ca04b008-b5b1-4fe9-821b-a288cc9ad40e" alt="シーシャフレーバー各種" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">フレーバー各種</div><div class="shop-item-cat">海外直輸入 / 厳選ブランド</div></div></div>
+ <div class="shop-item"><div class="shop-img"><img src="bowl-heat-management.jpg" alt="シーシャボウル＆ヒートマネジメント" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">ボウル / ヒートマネジメント</div><div class="shop-item-cat">Cosmo Bowl / Kaloud 他</div></div></div>
+ <div class="shop-item"><div class="shop-img"><img src="https://github.com/user-attachments/assets/130132b8-e4b3-471d-af67-319075eda5cd" alt="フーカー本体" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">フーカー本体</div><div class="shop-item-cat">Ocean Hookah / WD Hookah 他</div></div></div>
+ <div class="shop-item"><div class="shop-img"><img src="https://github.com/user-attachments/assets/ba2704c4-3f49-4e60-a37f-affad7fbebbd" alt="リユース・中古買取" loading="lazy"></div><div class="shop-item-info"><div class="shop-item-name">リユース / 中古買取</div><div class="shop-item-cat">中古備品の買取・販売</div></div></div>
+ </div>
+ <div style="text-align:center;margin-top:3rem" class="fade-in"><p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem">オンラインショップは準備中です。公開まで今しばらくお待ちください。</p></div>
 </div></section>
 
 <section class="section" id="company"><div class="container">
-  <div class="section-header fade-in"><span class="section-tag">Company</span><h2 class="section-title">会社概要</h2></div>
-  <div class="company-table fade-in">
-    <div class="company-row"><div class="company-label">会社名</div><div class="company-value">株式会社DE group</div></div>
-    <div class="company-row"><div class="company-label">代表取締役</div><div class="company-value">相澤 彰臣</div></div>
-    <div class="company-row"><div class="company-label">設立</div><div class="company-value">令和7年1月8日</div></div>
-    <div class="company-row"><div class="company-label">所在地</div><div class="company-value">宮城県仙台市青葉区立町1-12-203</div></div> <div class="company-row"><div class="company-label">電話番号</div><div class="company-value">022-302-3023</div></div>
-                    <div class="company-row"><div class="company-label">電話番号</div><div class="company-value">022-302-3023</div></div>
-    <div class="company-row"><div class="company-label">事業内容</div><div class="company-value"><ol class="biz-list"><li>インターネット・カタログ等通信販売</li><li>インターネットコンテンツサービスの提供</li><li>WEBサイトの企画立案、作成及び管理代行</li><li>WEBデザインほかインターネット関連のデザイン業務</li><li>マーケティング業務及び販売促進業務の支援及び代理業</li><li>生成AIの各種技術を応用したコンテンツの開発及び販売</li><li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li><li>知的財産権(著作権、特許権など)の売買及び売買代行</li><li>バー、クラブ等の飲食店の経営</li><li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li><li>古物商</li><li>前各号に関するコンサルティング事業</li><li>前各号に付帯関連する一切の事業</li></ol></div></div>
-  </div>
+ <div class="section-header fade-in"><span class="section-tag">Company</span><h2 class="section-title">会社概要</h2></div>
+ <div class="company-table fade-in">
+ <div class="company-row"><div class="company-label">会社名</div><div class="company-value">株式会社DE group</div></div>
+ <div class="company-row"><div class="company-label">代表取締役</div><div class="company-value">相澤 彰臣</div></div>
+ <div class="company-row"><div class="company-label">設立</div><div class="company-value">令和7年1月8日</div></div>
+ <div class="company-row"><div class="company-label">所在地</div><div class="company-value">宮城県仙台市青葉区立町1-12-203</div></div>
+ <div class="company-row"><div class="company-label">電話番号</div><div class="company-value">022-302-3023</div></div>
+ <div class="company-row"><div class="company-label">事業内容</div><div class="company-value"><ol class="biz-list"><li>インターネット・カタログ等通信販売</li><li>インターネットコンテンツサービスの提供</li><li>WEBサイトの企画立案、作成及び管理代行</li><li>WEBデザインほかインターネット関連のデザイン業務</li><li>マーケティング業務及び販売促進業務の支援及び代理業</li><li>生成AIの各種技術を応用したコンテンツの開発及び販売</li><li>知的財産権(著作権、特許権など)の実施、使用、利用許諾、維持、管理</li><li>知的財産権(著作権、特許権など)の売買及び売買代行</li><li>バー、クラブ等の飲食店の経営</li><li>フランチャイズチェーンシステムによる飲食店の経営及び加盟店の募集並びに加盟店の指導育成</li><li>古物商</li><li>前各号に関するコンサルティング事業</li><li>前各号に付帯関連する一切の事業</li></ol></div></div>
+ </div>
 </div></section>
 
 <section class="cta-section" id="contact"><div class="container fade-in">
-  <h2>お気軽にご相談ください</h2>
-  <p>シーシャバーの開業・FC加盟、マーケティング支援、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
-              <p>電話でのお問い合わせ: <strong>Tel: 022-302-3023</strong></p></strong></p>
-  <a href="mailto:info@degrp.info" class="btn btn-accent">お問い合わせ →</a> <a href="tel:022-302-3023" class="btn btn-ghost">Tel: 022-302-3023</a>
+ <h2>お気軽にご相談ください</h2>
+ <p>シーシャバーの開業・FC加盟、マーケティング支援、EC構築など、<br>まずはお気軽にお問い合わせください。</p>
+ <p>電話でのお問い合わせ: <strong>Tel: 022-302-3023</strong></p>
+ <a href="mailto:info@degrp.info" class="btn btn-accent">お問い合わせ →</a> <a href="tel:022-302-3023" class="btn btn-ghost">Tel: 022-302-3023</a>
 </div></section>
 
-<footer><div class="footer-inner"><div class="footer-logo">DE <span>group</span></div><small>&copy; 2025 株式会社DE group. All rights reserved.</small><small style="margin-left:2rem;color:var(--text-dim)">Tel: 022-302-3023</small></div></footer>
+<footer>
+ <div class="footer-inner">
+ <div class="footer-top">
+  <div class="footer-brand">
+  <div class="footer-logo">DE <span>group</span></div>
+  <p>飲食事業×マーケティング支援×EC事業。<br>シーシャカルチャーを起点に、多角的なビジネスを展開しています。</p>
+  </div>
+  <div class="footer-nav">
+  <h4>Menu</h4>
+  <ul>
+   <li><a href="#business">Business</a></li>
+   <li><a href="#store">Store</a></li>
+   <li><a href="#results">Results</a></li>
+   <li><a href="#fc">Franchise</a></li>
+   <li><a href="#shop">Shop</a></li>
+   <li><a href="#company">Company</a></li>
+  </ul>
+  </div>
+  <div class="footer-contact">
+  <h4>Contact</h4>
+  <p>〒980-0822</p>
+  <p>宮城県仙台市青葉区立町1-12-203</p>
+  <p style="margin-top:.5rem"><a href="tel:022-302-3023">Tel: 022-302-3023</a></p>
+  <p><a href="mailto:info@degrp.info">info@degrp.info</a></p>
+  </div>
+ </div>
+ <div class="footer-bottom">
+  <small>&copy; 2025 株式会社DE group. All rights reserved.</small>
+ </div>
+ </div>
+</footer>
 
 <script>
 const observer=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
