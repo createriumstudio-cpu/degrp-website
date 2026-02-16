@@ -1,4 +1,4 @@
-電話で問い合わせh<!DOCTYPE html>
+h電話で問い合わせh<!DOCTYPE html>
 <html lang="ja">
 <head>
  <meta charset="UTF-8">
@@ -19,10 +19,10 @@
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://degrp.co.jp/">h
  <meta property="og:locale" content="ja_JP">
- <meta property="og:image" content="https://raw.githubusercontent.com/createriumstudio-cpu/degrp-website/main/hero-bg.jpg">
+ <meta property="og:image" content="https://raw.githubusercontent.com/createriumstudioh-cpu/degrp-website/main/hero-bg.jpg">
  <meta property="og:image:width" content="1200">h
  <meta property="og:image:height" content="630">
- <meta name="twitter:card" content="summary">
+ <meta name="twitter:card" content="summary_large_image">
  <meta name="robots" content="index, follow">
  <meta name="format-detection" content="telephone=no">
  <meta name="theme-color" content="#b07c4f">
@@ -170,10 +170,49 @@ noscript .noscript-msg{text-align:center;padding:1rem;background:#fff3cd;color:#
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 /* Reduced motion preference */
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in{opacity:1!important;transform:none!important}}
- </style>
+ 
+    /* Store section dark theme */
+    #store {
+      background-color: #1a1a1a !important;
+      color: #ffffff !important;
+    }
+    #store h2,
+    #store p,
+    #store .text-base-content\/70 {
+      color: #ffffff !important;
+    }
+    #store .btn-ghost {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+    #store .btn-ghost:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    /* Shop cards Coming Soon overlay */
+    .card.bg-base-100.shadow-xl.hover\:shadow-2xl {
+      position: relative;
+      overflow: hidden;
+    }
+    .card.bg-base-100.shadow-xl.hover\:shadow-2xl::after {
+      content: "Coming Soon";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+      z-index: 10;
+    }
+</style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Corporation","name":"株式会社DE group","alternateName":"DE group","url":"https://degrp.co.jp/","telephone":"022-302-3023","address":{"@type":"PostalAddress","streetAddress":"立町1-12-203","addressLocality":"仙台市青葉区","addressRegion":"宮城県","postalCode":"980-0822","addressCountry":"JP"},"founder":{"@type":"Person","name":"相澤 彰臣"},"foundingDate":"2025-01-08","legalName":"株式会社DE group","description":"飲食事業・マーケティング支援・EC事業を展開する総合企業","numberOfEmployees":{"@type":"QuantitativeValue","value":"1-10"},"sameAs":[],"areaServed":{"@type":"Country","name":"JP"},"knowsAbout":["シーシャ","飲食店運営","マーケティング","EC販売","フランチャイズ"]}
+{"@context":"https://schema.org","@type":"Corporation","name":"株式会社DE group","alternateName":"DE group","url":"https://degrp.co.jp/","telephone":"022-302-3023","address":{"@type":"PostalAddress","streetAddress":"立町1-12-203","addressLocality":"仙台市青葉区","addressRegion":"宮城県","postalCode":"980-0822","addressCountry":"JP"},"founder":{"@type":"Person","name":"相澤 彰臣"},"foundingDate":"2025-01-08","legalName":"株式会社DE group","description":"飲食事業・マーケティング支援・EC事業を展開する総合企業","numberOfEmployees":{"@type":"QuantitativeValue","value":"1-10"},"sameAs":["https://www.instagram.com/candlechill_sendai/"],"areaServed":{"@type":"Country","name":"JP"},"knowsAbout":["シーシャ","飲食店運営","マーケティング","EC販売","フランチャイズ"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"株式会社DE group","url":"https://degrp.co.jp/","description":"飲食事業×マーケティング支援×EC事業","publisher":{"@type":"Corporation","name":"株式会社DE group"},"inLanguage":"ja"}
@@ -193,7 +232,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
  <h1 class="fade-in">「空間」と「仕組み」で、<br>熱狂と利益を実装する。</h1>
  <p class="hero-desc fade-in">SNSフォロワー1万人超×ヒトサラ全国1位。<br>クリエイティブとマーケティングの両輪で、飲食事業の成功を支援します。</p>
  <div class="hero-actions fade-in">
- <a href="#business" class="btn btn-accent">事業を見る →</a>
+ <a href="#business" class="btn btn-ghost">事業を見る →</a>
  <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
  </div>
 </div></section>
