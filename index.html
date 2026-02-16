@@ -19,7 +19,7 @@ h電話で問い合わせh<!DOCTYPE html>
  <meta property="og:type" content="website">
  <meta property="og:url" content="https://degrp.co.jp/">h
  <meta property="og:locale" content="ja_JP">
- <meta property="og:image" content="https://raw.githubusercontent.com/createriumstudioh-cpu/degrp-website/main/hero-bg.jpg">
+ <meta property="og:image" content="https://degrp.co.jp/hero-bg.jpg">
  <meta property="og:image:width" content="1200">h
  <meta property="og:image:height" content="630">
  <meta name="twitter:card" content="summary_large_image">
@@ -209,6 +209,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       pointer-events: none;
       z-index: 10;
     }
+
+    /* Contact Form */
+    .contact-form-wrapper{max-width:700px;margin:2.5rem auto 0;padding:0 1rem}
+    .contact-form .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .contact-form .form-group{display:flex;flex-direction:column;margin-bottom:1rem}
+    .contact-form .form-group.full-width{grid-column:1/-1}
+    .contact-form label{font-size:.85rem;font-weight:600;margin-bottom:.4rem;color:var(--text)}
+    .contact-form label .required{color:#e74c3c}
+    .contact-form input,.contact-form select,.contact-form textarea{padding:.75rem 1rem;border:1px solid var(--border);border-radius:.5rem;font-size:.95rem;font-family:inherit;background:var(--surface);color:var(--text);transition:border .2s}
+    .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent)}
+    .contact-form textarea{resize:vertical;min-height:120px}
+    .form-submit-btn{width:100%;margin-top:.5rem;justify-content:center}
+    @media(max-width:600px){.contact-form .form-grid{grid-template-columns:1fr}}
 </style>
 
 <script type="application/ld+json">
@@ -314,6 +327,44 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem">
  <a href="tel:022-302-3023" class="btn btn-accent">電話で問い合わせ →</a> <a href="mailto:info@degrp.co.jp" class="btn btn-accent" style="margin-left:1rem;background:transparent;border:2px solid var(--accent);color:var(--accent)">メールで問い合わせ →</a>
  </div>
+    <!-- Contact Form -->
+    <div class="contact-form-wrapper fade-in">
+      <form action="https://formsubmit.co/info@degrp.co.jp" method="POST" class="contact-form">
+        <input type="hidden" name="_subject" value="DEグループHP お問い合わせ">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://degrp.co.jp/#contact">
+        <input type="text" name="_honey" style="display:none">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@example.com">
+          </div>
+          <div class="form-group">
+            <label for="company">会社名</label>
+            <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+          </div>
+          <div class="form-group">
+            <label for="subject">お問い合わせ種別</label>
+            <select id="subject" name="subject">
+              <option value="" disabled selected>選択してください</option>
+              <option value="FC加盟">FC加盟について</option>
+              <option value="マーケティング支援">マーケティング支援について</option>
+              <option value="EC事業">EC事業について</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+          <textarea id="message" name="message" rows="5" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+        <button type="submit" class="btn btn-accent form-submit-btn">送信する →</button>
+      </form>
+    </div>
 </div></section>
 </main>
 
