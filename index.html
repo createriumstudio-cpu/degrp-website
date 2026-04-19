@@ -65,7 +65,7 @@
  .section-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:1rem;display:block}
  .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;color:var(--text)}
  .section-desc{font-size:.95rem;color:var(--text-dim);max-width:600px;margin:0 auto}
- .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+ .biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
  .biz-card{padding:2.5rem;border-radius:var(--radius);background:var(--surface-card);border:1px solid var(--border);transition:all .35s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
  .biz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .35s}
  .biz-card:hover{border-color:rgba(176,124,79,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}.biz-card:hover::before{opacity:1}
@@ -143,7 +143,8 @@
  .case-text p{font-size:.88rem;color:var(--text-dim);line-height:1.8;margin-bottom:1rem}
  .case-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
  .case-tag{padding:.2rem .6rem;border-radius:6px;font-size:.65rem;font-weight:600;background:rgba(176,124,79,.08);color:var(--accent)}
- @media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr}}
+ .case-visual-fallback{background:linear-gradient(135deg,#2a1f1a 0%,#4a3525 50%,#6b4a2e 100%);min-height:320px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius);position:relative}.case-visual-fallback::before{content:"Case Study";position:absolute;color:rgba(255,255,255,.3);font-size:2rem;letter-spacing:.1em;font-weight:600}
+@media(max-width:768px){.nav-links{display:none}.store-grid,.consult-card,.fc-grid,.case-card{grid-template-columns:1fr;gap:2rem}.shop-preview{grid-template-columns:repeat(2,1fr)}.biz-grid{grid-template-columns:1fr}.company-row{grid-template-columns:1fr;gap:.3rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}.fc-features{grid-template-columns:1fr}.consult-metrics{grid-template-columns:1fr}}
  .fade-in{opacity:0;transform:translateY(25px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
 
 /* Skip to content */
@@ -151,7 +152,7 @@
 /* Mobile menu */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001;background:none;border:none}.hamburger span{display:block;width:24px;height:2px;background:var(--text);transition:all .3s}.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999}
-@media(max-width:768px){.hamburger{display:flex}.nav-links{position:fixed;top:0;right:-100%;width:70%;max-width:300px;height:100vh;background:#fff;flex-direction:column;padding:80px 2rem 2rem;transition:right .3s;z-index:1000;box-shadow:-4px 0 20px rgba(0,0,0,.1)}.nav-links.active{right:0}.mobile-overlay.active{display:block}.nav-links li{margin:0}.nav-links a{display:block;padding:.75rem 0;font-size:1rem}.nav-cta{margin-top:1rem}}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:flex;position:fixed;top:0;right:-100%;width:70%;max-width:300px;height:100vh;background:#fff;flex-direction:column;padding:80px 2rem 2rem;transition:right .3s;z-index:1000;box-shadow:-4px 0 20px rgba(0,0,0,.1)}.nav-links.active{right:0}.mobile-overlay.active{display:block}.nav-links li{margin:0}.nav-links a{display:block;padding:.75rem 0;font-size:1rem;color:#333}.nav-links .nav-cta{color:#fff}.nav-cta{margin-top:1rem}}
 /* Back to top */
 .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--accent);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s;z-index:100;box-shadow:0 4px 12px rgba(176,124,79,.3)}.back-to-top.visible{opacity:1;visibility:visible}.back-to-top:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(176,124,79,.4)}
 /* Address link */
@@ -279,7 +280,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
  <div class="consult-metrics"><div class="metric"><div class="metric-num">1位</div><div class="metric-label">ヒトサラ全国ランキング</div></div><div class="metric"><div class="metric-num">1万</div><div class="metric-label">Instagramフォロワー</div></div></div>
  </div>
  <div class="case-card fade-in">
- <div class="case-visual"><img src="https://tori-matumoto.com/wp-content/uploads/2023/06/662000.jpg" alt="鶏 炭火 地酒 松もと" loading="lazy"></div>
+ <div class="case-visual"><img src="https://tori-matumoto.com/wp-content/uploads/2023/06/662000.jpg" alt="鶏 炭火 地酒 松もと" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('case-visual-fallback')"></div>
  <div class="case-text"><span class="section-tag">Case Study</span><h4>鶏 炭火 地酒 松もと</h4><div class="case-sub">仙台・焼き鳥店 — ヒトサラ全国1位達成</div>
  <div class="case-tags"><span class="case-tag">集客支援</span><span class="case-tag">SNSマーケティング</span><span class="case-tag">デジタルサイネージ</span><span class="case-tag">HP制作・運用</span><span class="case-tag">トータル運営代行</span></div>
  <p>集客からSNSマーケティング、デジタルサイネージ、ホームページ制作までトータルで運営代行を担当。データに基づいた戦略により、ヒトサラ全国ランキング1位を獲得しました。</p><a href="https://tori-matumoto.com/" class="biz-link" target="_blank" rel="noopener">店舗サイトを見る →</a></div>
